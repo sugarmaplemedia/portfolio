@@ -52,7 +52,7 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
             <section id="entry-box">
                 <div id="entry-info-box" class="flex flex-jsb">
                     <div>
-                        <img src={portfolioEntry.image} alt={portfolioEntry.title} />
+                        <img src={portfolioEntry.image} alt={portfolioEntry.name} />
                         <Button link={portfolioEntry.source} newTab={true}>View Project</Button>
                     </div>
                     <hr id="entry-barrier" />
