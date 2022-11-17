@@ -1,8 +1,0 @@
-Sections: width (full/default), spacing among other high-level components
-
-Text
-----
-h1: Page title
-h2: Section titles
-h3: component title(s)
-h4: sub-component text titles
