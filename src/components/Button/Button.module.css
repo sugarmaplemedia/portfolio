@@ -1,0 +1,61 @@
+#button {
+    margin: 12px 0;
+    padding: 12px 18px;
+
+    display: inline-block;
+
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: lowercase;
+
+    border-radius: 12px;
+
+    transition: 0.1s;
+}
+#button:hover {
+    transform: translateY(3px);
+}
+
+.light {
+    color: var(--clr-tan-primary);
+
+    background-color: var(--clr-tan-tertiary);
+    border: 2px solid var(--clr-tan-secondary);
+    box-shadow: 0 3px 6px var(--clr-tan-tertiary);
+}
+.light:hover {
+
+    border-color: var(--clr-tan-primary);
+    background-color: var(--clr-tan-secondary);
+    box-shadow: 0 1px 3px var(--clr-tan-secondary);
+}
+
+.important {
+    color: var(--clr-tan-primary);
+
+    background-image: var(--main-gradient-btn);
+    box-shadow: 0 3px 6px var(--clr-tan-secondary);
+}
+.important:hover {
+    border-color: var(--clr-pred-light);
+    box-shadow: 0 1px 3px var(--clr-tan-secondary);
+}
+
+a.arrow {
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 1.2rem;
+    color: var(--clr-tan-primary);
+}
+
+a.arrow-right {
+    flex-direction: row-reverse;
+    float: right;
+}
+
+iconify-icon.arrow {
+    font-size: 1.8rem;
+}

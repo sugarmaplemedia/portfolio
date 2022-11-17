@@ -1,0 +1,31 @@
+---
+import Portfolio from "../../layouts/Portfolio.astro";
+import Gallery from "../../components/Gallery";
+import Spacer from "../../components/Spacer.astro";
+
+const { PUBLIC_SITEURL } = import.meta.env;
+const portfolioGallery:string = `${PUBLIC_SITEURL}/images/portfolio/tolca/`;
+---
+
+<Portfolio 
+    entry="Top of the Lake"
+    lastPage={{title: "Tour Da Yoop, Eh", link: "./tour-da-yoop-eh"}}
+    nextPage={{title: "Finlandia Foundation", link: "./finlandia-foundation"}}
+>
+    <h3>Overview</h3>
+    <p>Top of the Lake Communities Association—often shortened to <span class="txt-wi">Top of the Lake</span> and abbreviated as TOLCA— is a non-profit merchants association that provides community support for several towns in the midsection of the Upper Peninsula of Michigan. I was connected with their team in May 2020 to design and develop a new website that would inspire more tourism and activity in the area.</p>
+
+    <h3>Website Design</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="websitedesign" client:idle />
+    <p>The initial design, built by Kath who later contracted me for work with the <a href="./finlandia-foundation">Finlandia Foundation website and digital backend</a>, was functional but in need of a modern refresh. With the excellent <a href="https://www.kadencewp.com/">Kadence WP theme</a> as my guide, I constructed a custom experience that incorporated design elements associated with both tourism and chamber of commerce websites.</p>
+    <p>As I built out the website, I also kept a Figjam sitemap to act as a log of progress.</p>
+
+    <h3>Website Development</h3>
+    <p>For a Wordpress website needs to follow a template and be editable by a less-experienced editor, the design and development processes are closely intertwined. However, I needed to write some custom functionality into the site to meet the project objectives, such as:</p>
+    <ul>
+        <li>Creating reusable components that may be implemented by an editor to maintain design cohesion</li>
+        <li>Customize existing components to properly meet the requirements of certain pages</li>
+        <li>Integrate calendar and form plugins to expand functionality</li>
+    </ul>
+
+</Portfolio>

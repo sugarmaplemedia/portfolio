@@ -1,0 +1,34 @@
+---
+import Portfolio from "../../layouts/Portfolio.astro";
+import Gallery from "../../components/Gallery/Gallery";
+
+const { PUBLIC_SITEURL } = import.meta.env;
+const portfolioGallery:string = `${PUBLIC_SITEURL}/images/portfolio/ffn/`;
+---
+
+<Portfolio 
+    entry="Finlandia Foundation"
+    lastPage={{title: "Top of the Lake", link: "./top-of-the-lake"}}
+>
+    <h3>Overview</h3>
+    <p>Finlandia Foundational National (FFN) is a non-profit organization that promotes Finnish heritage in the United States by raising funds to provide scholarships and grants, host events, and connect Finnish-Americans with their heritage.</p>
+    <p>Kath, the director of communications at FFN and one of my contacts on the <a href="/portfolio/top-of-the-lake">Top of the Lake website</a> initially contracted me to assist in porting information from an old version of their website to their new design. Over the course of forty-some hours, I transferred hundreds of pages, thousands of paragraphs, and many, many images. Some months later, she pulled me back in to finish putting together the page layouts and SEO, and set up a new digital backend for the organization.</p>
+    
+    <h3>Content Transfer</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="contenttransfer" client:idle />
+    <p>As both the websites (old and new) were built on Wordpress, transferring the content was relatively simple. The time-consuming part was how much I had to transfer, and dealing with myriad formatting issues on the old website.</p>
+    <p>Using Figjam (Figma's whiteboarding solution) I mapped all the content from the old site to the new site in the process of transferring it, in effort to keep track of my own progress and aid whoever else would be working on the site. That ended up being me.</p>
+    
+    <h3>Website Layout</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="websitelayout" client:visible />
+    <p>The original company that designed the theme for the website had some misunderstandings with FFN, leading them to believe that they would come back in to "prettify" the site after all the content had been ported. That wasn't the case, so they had me come in to help finish the job.</p>
+    <p>This wasn't my first foray into using Wordpress to generate website layouts, so I was pretty comfortable with diving in to fix up the content. Some pages had quite a bit of work to be done (hello again bad formatting), but I am proud of the end product.</p>
+
+    <h3>Google Workspace</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="workspace" client:visible />
+    <p>Besides the front end work, Kath also enlisted me to transfer the FFN digital backend from Hostgator/CPanel to Google Workspace. Initially, this was because the original design contractors were going to assist in managing the backend, but they decided to go forward with it anyway to get away from <a href="https://www.addwp.com/why-people-hate-eig-companies/" target="_blank">the mess that is Hostgator, or EIG in general.</a></p>
+    <p>The first thing to do was set up the email services. At the beginning, I was under the impression that no emails were previously set up, and overwrote the DNS that directed to emails that were secretly (well, to me) being held in Hostgator. This lead to some email delays and frustration, but no data was lost and the issue was quickly corrected.</p>
+    <p>The DNS and domain registrar were next on the menu. Those transferred without any hinderances.</p>
+    <p>Finally, I took my first dive into a cloud services platform with Google Cloud. Learning on the job is one of my favorite parts of digital design and development, but figuring out my way through the maze of endless web services was quite a daunting task. But I got the server up and running!</p>
+
+</Portfolio>

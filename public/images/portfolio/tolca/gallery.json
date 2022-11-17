@@ -1,0 +1,19 @@
+{
+    "websitedesign": [
+        {
+            "source": "/images/portfolio/tolca/websitedesign-newsite.jpg",
+            "alt": "New site home page",
+            "caption": "New site home page"
+        },
+        {
+            "source": "/images/portfolio/tolca/websitedesign-oldsite.png",
+            "alt": "Old site home page",
+            "caption": "Old site home page"
+        },
+        {
+            "source": "/images/portfolio/tolca/websitedesign-sitemap.png",
+            "alt": "Site map and progress log",
+            "caption": "Site map and progress log"
+        }
+    ]
+}

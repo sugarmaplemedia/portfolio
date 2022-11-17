@@ -1,0 +1,14 @@
+---
+import GalleryStatic from "./GalleryStatic/";
+const dbListName = Astro.props;
+const { size = "md" } = Astro.props;
+const { tag = "" } = Astro.props;
+const { count = 0 } = Astro.props;
+
+const { PUBLIC_SITEURL } = import.meta.env;
+const response = await fetch(`${PUBLIC_SITEURL}/databases/galleries.json`);
+const data = await response.json();
+const  dbList = data[dbListName["dbListName"]];
+---
+
+<GalleryStatic database={dbList} size={size} tag={tag} count={count} />

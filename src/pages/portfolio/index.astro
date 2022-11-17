@@ -1,0 +1,143 @@
+---
+import { Icon } from '@iconify-icon/react';
+import GalleryStatic from '../../components/GalleryStatic.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Harrison Bouche" activePage="Portfolio">
+	<section>
+		<h1>Portfolio</h1>
+	</section>
+	<section class="portfolio-service-box">
+		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
+			<div class="portfolio-service">
+				<Icon className="portfolio-service" icon="tabler:browser" />
+				<h2>Front End<br />Development</h2>
+			</div>
+			<div class="flex flex-gmd">
+				<Icon className="portfolio-proficiency" icon="tabler:brand-react" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-vue" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-html5" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-javascript" />
+			</div>
+		</div>
+		<div class="box-w23">
+			<GalleryStatic dbListName="portfolio" size="sml" tag="wdev" count={3} />
+		</div>
+	</section>
+	<section class="portfolio-service-box">
+		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
+			<div class="portfolio-service">
+				<Icon className="portfolio-service" icon="tabler:device-desktop" />
+				<h2>Website<br />Design & UI</h2>
+			</div>
+			<div class="flex flex-gmd">
+				<Icon className="portfolio-proficiency" icon="tabler:brand-figma" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-adobe" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-wordpress" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-css3" />
+			</div>
+		</div>
+		<div class="box-w23">
+			<GalleryStatic dbListName="portfolio" size="sml" tag="wdes" count={3} />
+		</div>
+	</section>
+	<section class="portfolio-service-box">
+		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
+			<div class="portfolio-service">
+				<Icon className="portfolio-service" icon="tabler:cloud-computing" />
+				<h2>Digital<br />Management</h2>
+			</div>
+			<div class="flex flex-gmd">
+				<Icon className="portfolio-proficiency" icon="tabler:brand-meta" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-google" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-wordpress" />
+				<Icon className="portfolio-proficiency" icon="tabler:server-2" />
+			</div>
+		</div>
+		<div class="box-w23">
+			<GalleryStatic dbListName="portfolio" size="sml" tag="da" count={3} />
+		</div>
+	</section>
+	<section class="portfolio-service-box">
+		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
+			<div class="portfolio-service">
+				<Icon className="portfolio-service" icon="tabler:message-2" />
+				<h2>Digital<br />Marketing</h2>
+			</div>
+			<div class="flex flex-gmd">
+				<Icon className="portfolio-proficiency" icon="tabler:brand-meta" />
+				<Icon className="portfolio-proficiency" icon="tabler:brand-google" />
+				<Icon className="portfolio-proficiency" icon="tabler:chalkboard" />
+				<Icon className="portfolio-proficiency" icon="tabler:file-analytics" />
+			</div>
+		</div>
+		<div class="box-w23">
+			<GalleryStatic dbListName="portfolio" size="sml" tag="dm" count={3} />
+		</div>
+	</section>
+	<section class="portfolio-service-box">
+		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
+			<div class="portfolio-service">
+				<Icon className="portfolio-service" icon="tabler:video" />
+				<h2>Multimedia<br />Production</h2>
+			</div>
+			<div class="flex flex-gmd">
+				<Icon className="portfolio-proficiency" icon="tabler:camera" />
+				<Icon className="portfolio-proficiency" icon="tabler:video" />
+				<Icon className="portfolio-proficiency" icon="tabler:microphone" />
+				<Icon className="portfolio-proficiency" icon="tabler:devices-pc" />
+			</div>
+		</div>
+		<div class="box-w23">
+			<GalleryStatic dbListName="portfolio" size="sml" tag="cc" count={3} />
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.portfolio-service-box {
+		display: flex;
+		align-items: center;
+	}
+
+	div.portfolio-service {
+		width: 216px;
+		position: relative;
+	}
+	.portfolio-service h2 {
+		margin-bottom: 0;
+		
+		font-size: 1.75rem;
+		line-height: 1.75rem;
+		text-transform: uppercase;
+	}
+	.portfolio-service br {
+		margin: 0;
+	}
+
+	iconify-icon.portfolio-service {
+		position: absolute;
+		left: -18px;
+		bottom: 20px;
+		z-index: -1;
+
+		transform: scale(3.5);
+		color: var(--clr-tan-secondary);
+	}
+
+	iconify-icon.portfolio-proficiency {
+		padding: 7px;
+		transform: scale(1.5);
+
+		background-color: var(--clr-tan-tertiary);
+		border-radius: 100%;
+	}
+
+	@media only screen and (max-width: 850px) {
+		.portfolio-service-box {
+			flex-direction: column;
+			gap: 36px;
+		}
+	}
+</style>

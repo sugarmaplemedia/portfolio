@@ -1,0 +1,100 @@
+---
+import { Icon } from '@iconify-icon/react';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Harrison Bouche" activePage="Contact">
+    <section id="heading">
+        <h1>Contact</h1>
+    </section>
+    <section class="columns">
+        <div class="box-w12">
+            <h2>Reach Out Directly</h2>
+            <p>
+                <Icon className="icon" icon="tabler:phone" /> <a class="txt-clrtp txth-clrts txt-wb" href="tel:9064482138">(906) 458-2138</a> <br />
+                <Icon className="icon" icon="tabler:mail" /> <a class="txt-clrtp txth-clrts txt-wb" href="mailto:harrison@sm.media">harrison@sm.media</a>
+            </p>
+        </div>
+        <div class="box-w12">
+            <h2>Send a Message</h2>
+            <form id="contact-form">
+                <div>
+                    <label for="email-addr">Email Address:</label>
+                    <input name="email-addr" type="email" placeholder="Email" required/>
+                </div>
+                <div>
+                    <label for="email-sub">Subject:</label>
+                    <input name="email-sub" type="text" placeholder="Subject" required/>
+                </div>
+                <div>
+                    <label for="email-msg">Message:</label>
+                    <textarea name="email-msg"></textarea>    
+                </div>
+                <input class="button" type="submit" value="Send Message" required/>
+            </form>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    br {
+        margin-bottom: 3px;
+    }
+
+    .icon {
+        padding: 0 6px 0 3px;
+        transform: translateY(3px) scale(1.25);
+    }
+
+    #contact-form {
+        width: 90%;
+
+        display: grid;
+        row-gap: 12px;
+    }
+
+    #contact-form div {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #contact-form input, #contact-form textarea {
+        padding: 6px;
+        
+        border-radius: 12px;
+        border: 3px solid var(--clr-tan-tertiary);
+        box-shadow: 0 3px 6px var(--clr-tan-bg);
+
+        transition: 0.1s;
+    }
+    #contact-form input:focus, #contact-form textarea:focus {
+        border-color: var(--clr-tan-secondary);
+        box-shadow: 0 3px 6px var(--clr-tan-tertiary);
+        outline: none;
+    }
+
+    #contact-form label {
+        font-weight: bold;
+    }
+
+    #contact-form textarea {
+        height: 8rem;
+    }
+
+    #contact-form .button {
+        color: var(--clr-tan-primary);
+        background-color: var(--clr-tan-tertiary);
+        border: 3px solid var(--clr-tan-secondary);;
+    }
+    #contact-form .button:hover {
+        background-color: var(--clr-tan-secondary);
+        border-color: var(--clr-tan-primary);
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 560px) {
+		.columns {
+			flex-direction: column;
+		}
+    }
+</style>

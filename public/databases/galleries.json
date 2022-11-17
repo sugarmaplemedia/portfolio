@@ -1,0 +1,48 @@
+{
+    "portfolio": {
+        "entries": [
+            {
+                "name": "Finlandia Foundation",
+                "tags": ["wdes", "wdev", "da"],
+                "link": "/portfolio/finlandia-foundation",
+                "image": "/images/portfolio/ffn.png",
+                "source": "https://develop.finlandiafoundation.org"
+            },
+            {
+                "name": "Top of the Lake",
+                "tags": ["wdes", "wdev"],
+                "link": "/portfolio/top-of-the-lake",
+                "image": "/images/portfolio/tolca.png",
+                "source": "https://topofthelake.org"
+            },
+            {
+                "name": "Tour Da Yoop, Eh",
+                "tags": ["wdes", "wdev", "da", "dm", "cc"],
+                "link": "/portfolio/tour-da-yoop-eh",
+                "image": "/images/portfolio/tdy.png",
+                "source": "https://tourdayoopeh.com"
+            },            
+            {
+                "name": "U.P. Lions Serve",
+                "tags": ["wdev", "da", "dm", "cc"],
+                "link": "/portfolio/up-lions-serve",
+                "image": "/images/portfolio/upls.png",
+                "source": "https://uplionsserve.org"
+            },
+            {
+                "name": "NMU: CAMS Dept.",
+                "tags": ["wdev", "da", "cc"],
+                "link": "/portfolio/nmu-cams",
+                "image": "/images/portfolio/nmu-cams.png",
+                "source": "https://nmu.edu/cams"
+            },
+            {
+                "name": "harrisonbouche.com",
+                "tags": ["wdes", "wdev", "da", "cc"],
+                "link": "/portfolio/harrison-bouche",
+                "image": "/images/portfolio/hbcom.png",
+                "source": "https://harrisonbouche.com"
+            }
+        ]
+    }
+}

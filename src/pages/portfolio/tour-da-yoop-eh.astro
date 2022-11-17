@@ -1,0 +1,76 @@
+---
+import Portfolio from "../../layouts/Portfolio.astro";
+import Gallery from "../../components/Gallery";
+import Spacer from "../../components/Spacer.astro";
+import Breakaway from "../../components/Breakaway.astro";
+
+const { PUBLIC_SITEURL } = import.meta.env;
+const portfolioGallery:string = `${PUBLIC_SITEURL}/images/portfolio/tdy/`;
+---
+
+<Portfolio 
+    entry="Tour Da Yoop, Eh"
+    lastPage={{title: "U.P. Lions Serve", link: "./up-lions-serve"}}
+    nextPage={{title: "Top of the Lake", link: "./top-of-the-lake"}}
+>
+    <h3>Overview</h3>
+    <p>Tour Da Yoop, Eh (TDY) is a annual 10-day bike tour that stretches 1,200 miles around the perimeter of the Upper Peninsula of Michigan. It features the U.P. Lions' Childhood Cancer Program as a fundraising partner. I was brought on in September 2021 to help rebuild the website after the previous event manager dropped off the project. As time passed, my responsibilities grew to include:</p>
+    <ul>
+        <li>Designing the graphics for branding, advertising, and collateral</li>
+        <li>Leading the digital marketing campaign</li>
+        <li>Building out the registration portal and digital merchant services</li>
+        <li>Managing the social media pages</li>
+        <li>Constructing a digital assets management system</li>
+        <li>Creating and coordinating content creation while on tour</li>
+    </ul>
+    <p>Essentially, I created and handled the majority of content seen online and graphics seen offline for the 2022 event. Even though I am not working on the event this year, much of my effort is still present in the 2023 event's presence.</p>
+    <br />
+
+    <h3>Website</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="website" client:idle />
+    <p>The website acts as an information source for TDY, the Childhood Cancer Program, and bike safety. During my tenure on the project, I was the sole editor and developer for all 30+ pages of content. Despite being built on SquareSpace, much of the site uses custom HTML/CSS code to get around SquareSpace's crippling design restrictions. </p>
+    <br />
+
+    <h3>Registration, Merchant Services, the DAM</h3>
+    <p>As we came closer to the launch date, I was asked to put together the registration portal for the tour. Throughout the rest of the wait for the tour to arrive, we worked to refine the sign up process, by doing things like adding packages to simplify the a la carte section selection, or sending one of our members through a (reimbursed) trip through the sign up funnel.</p>
+    <p>A few months after we launched the website, I used SquareSpace's merchant services to allow cyclists to purchase self-supported bike ride routes and jerseys.</p>
+    <p>At some point, we noticed there was no organized system for collecting records, so I got permission to spin up a DigitalOcean server and hosted a <a href="https://resourcespace.com/" target="_blank">Resourcespace</a> instance (an open-source digital assets management environment) that collected held shared file and photo we had. Unfortunately, it didn't see much use after I left, so I spun it down.</p>
+    <br />
+
+    <h3>Branding</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="branding" client:visible />
+    <p>For the majority of the 2022 tour, I was in control of the material design. My responsibilities ranged from creating the wordmark, to designing the presskit and press release page layouts, to developing advertisements for print magazines. </p>
+    <p>Much of my branding work was focused around the wordmark, which was the de facto icon for most marketing material, and tweaking the logo to be more efficient.</p>
+    <Breakaway><a href="http://localhost:3000/files/portfolio/tdy/presskit.pdf" target="_blank">Read the 2022 press kit</a></Breakaway>
+    <br />
+
+    <h3>Advertising and Handouts</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="graphics" client:visible />
+    <p>Some of my more physical work for the tour includes designing and distributing TDY postcards, creating an advertisement for the League of Michigan Bicyclists magazine, creating website icons, and distributable instructions for the event crew.</p>
+    <p>I utilized Adobe Illustrator for the majority of my work, tapping into Photoshop and other programs when necessary. Most products would start as an idea that I workshopped with the TDY staff until we had something concrete. </p>
+    <br />
+
+    <h3>Social Media & Digital Marketing</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="socialmedia" client:visible />
+    <p>I was asked to set up a completely new Facebook and Instagram page after the previous event manager walked away with the login information for the tour's old pages (don't ask me why). Afterwards, I managed the pages with assistance from <a href="https://www.linkedin.com/in/ryan-stafford-7993b6191?original_referer=https%3A%2F%2Fwww.google.com%2F" target="_blank">Ryan Stafford</a>, a Social Media Marketing Major from Michigan Tech. </p>
+    <p>Social media wasn't new to me, but managing a commercial page was. Thanks to Ryan, I learned a great deal about the Meta Business Suite and social media marketing techniques. Through the page, Ryan and I ran several advertising campaigns that generated <span class="txt-wb">hundreds of page likes</span> and brought knowledge of the tour <span class="txt-wb">overseas</span>.</p>
+    <Breakaway><a href="https://facebook.com/tourdayoopeh" target="_blank">Visit the Facebook page</a></Breakaway>
+    <br />
+    <p>Outside of social media, I ran a Google Ads campaign that shared the event with over 100,000 people across the country. I also developed partnerships with <span class="txt-wb">BikeRide</span>, a biking event calendar, and the <span class="txt-wb">Adventure Cycling Association</span>, an international biking support organization.</p>
+    <br />
+
+    <h3>Content Creation</h3>
+    <Gallery galleryJson={portfolioGallery} galleryName="content" client:visible />
+    <p>Before the tour started, I created several video advertisements about the tour that represented the bulk of our social media campaigns. I produced the videos with Adobe Premiere Pro with content that was taken the year prior.</p>
+    <p>During the 2022 tour, I was in control of content production and lead a team of four support crew to take over 250 gigabytes of photo and video. During this time, I...</p>
+    <ul>
+        <li>Learned how to pilot a drone in a variety of circumstances (and became pretty good at it)</li>
+        <li>Worked with cyclists to produce tens of hours of GoPro footage of first-person bike riding</li>
+        <li>Managed on-site interviews</li>
+        <li>Operated a gymbal, mirrorless camera, and lots of other tech</li>
+        <li><span class="txt-sml">Crashed the drone against a powerline and dropped the gymbal/camera rig off the roof of the car (everything still worked!)</span></li>
+    </ul>
+    <p>In the end, we created some world class bike tour content that will be a boon for the event in the years to come. It was quite the ride.</p>
+    <Gallery galleryJson={portfolioGallery} galleryName="content2" client:visible />
+    
+</Portfolio>

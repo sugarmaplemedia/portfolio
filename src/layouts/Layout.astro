@@ -1,0 +1,127 @@
+---
+import Menu from '../components/Menu.astro';
+import Footer from '../components/Footer.astro';
+import '../stylesheets/defaults.css';
+
+export interface Props {
+	title: string;
+	activePage: string;
+}
+
+const { title, activePage } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+		<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+	</head>
+	<body>
+		<Menu activePage={activePage} />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	/* Page Setup */
+	html {
+		font-family: 'Nunito', sans-serif;
+		color: var(--clr-tan-primary);
+
+		background-color: var(--clr-tan-bg);
+	}
+
+	main {
+		margin-top: 24px;
+	    display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	section {
+		width: 900px;
+		margin-bottom: 48px;
+	}
+
+	/* Text setup */
+	h1 {
+		font-size: 3rem;
+		font-weight: 900;
+	}
+	h2 {
+		font-size: 2.5rem;
+		font-weight: 900;
+		margin-bottom: 1rem;
+	}
+	h3 {
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+	}
+	h4 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+	}
+	p {
+		margin-bottom: 0.5rem;
+	}
+
+	/* Styling content setup */
+	.columns {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		gap: 24px;
+	}
+	.columns hr {
+		width: 0;
+        height: 48px;
+
+        border: 0;
+        border-right: 5px dotted;
+		border-spacing: 10px;
+    }
+
+
+	/* Element setup */
+	br {
+		margin-bottom: 0rem;
+	}
+
+	li {
+		margin-bottom: 18px;
+	}
+
+	img.profile {
+		min-width: 240px;
+		height: 240px;
+		border-radius: 100%;
+		background-color: var(--clr-tan-secondary);
+	}
+
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+	@media only screen and (max-width: 1000px) {
+		/* Page Setup */
+		section {
+			width: 90%;
+		}
+	}
+</style>

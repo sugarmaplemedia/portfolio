@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button';
+import GalleryStatic from '../components/GalleryStatic.astro';
+
+---
+
+<Layout title="Harrison Bouche" activePage="Home">
+	<section>
+		<h1>Harrison Bouche, <span class="text-gradient">Digital Architect.</span></h1>
+	</section>
+	<section class="columns">
+		<div>
+			<img class="profile" src="/images/photos/hb-bw1.png" alt="Profile image of Harrison Bouche" />
+		</div>
+		<hr class="separator" />
+		<div class="box-w23">
+			<p>
+				Nice to meet you! My name is Harrison Bouche. I am a web developer with additional skills in graphic design, audio production, and business communication. My goal is to provide extraordinary service while meeting your digital needs in a timely manner.
+				<br>
+				I am currently open for project inquiries. Feel free to reach out!
+				<br>
+				<Button link="contact">Let's chat!</Button>
+			</p>
+		</div>
+	</section>
+	<section>
+		<h2>Recent Projects</h2>
+		<GalleryStatic dbListName="portfolio" count={3} />
+	</section>
+</Layout>
+
+<style>
+	h1 {
+		text-align: center;
+	}
+
+	.text-gradient {
+		background-image: var(--main-gradient);
+		background-clip: text;
+		color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+
+	.columns {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 24px;
+	}
+
+	.separator {
+		width: 0;
+		height: 48px;
+
+		border: 0;
+		border-right: 5px dotted;
+		border-spacing: 10px;
+  	}
+
+	@media only screen and (max-width: 1000px) {
+		h1 {
+			width: 500px;
+			margin: auto;
+		}
+	}
+
+	@media only screen and (max-width: 560px) {
+		h1 {
+			width: 80%;
+		}
+
+		.columns {
+			flex-direction: column;
+		}
+
+		.separator {
+			display: none;
+		}
+
+		.box-w23 {
+			width: 100%;
+		}
+
+	}
+
+</style>
