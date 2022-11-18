@@ -38,8 +38,9 @@ main {
 }
 
 section {
-  width: 900px;
-  margin-bottom: 48px;
+    width: 90%;
+    max-width: 900px;
+    margin-bottom: 48px;
 }
 
 /* Text setup */
@@ -75,16 +76,15 @@ ul {
   margin: 0.5rem 0;
 }
 
+li {
+    margin-bottom: 18px;
+}
+
 img.profile {
   min-width: 240px;
   height: 240px;
   border-radius: 100%;
   background-color: var(--clr-tan-secondary);
-}
-
-code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 @media only screen and (max-width: 560px) {

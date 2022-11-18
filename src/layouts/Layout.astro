@@ -35,52 +35,6 @@ const { title, activePage } = Astro.props;
 </html>
 
 <style is:global>
-	/* Page Setup */
-	html {
-		font-family: 'Nunito', sans-serif;
-		color: var(--clr-tan-primary);
-
-		background-color: var(--clr-tan-bg);
-	}
-
-	main {
-		margin-top: 24px;
-	    display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-
-	section {
-        width: 90%;
-		max-width: 900px;
-		margin-bottom: 48px;
-	}
-
-	/* Text setup */
-	h1 {
-		font-size: 3rem;
-		font-weight: 900;
-	}
-	h2 {
-		font-size: 2.5rem;
-		font-weight: 900;
-		margin-bottom: 1rem;
-	}
-	h3 {
-		font-size: 2rem;
-		font-weight: 700;
-		margin-bottom: 1rem;
-	}
-	h4 {
-		font-size: 1.5rem;
-		font-weight: 700;
-		margin-bottom: 0.25rem;
-	}
-	p {
-		margin-bottom: 0.5rem;
-	}
-
 	/* Styling content setup */
 	.columns {
 		display: flex;
@@ -96,33 +50,4 @@ const { title, activePage } = Astro.props;
         border-right: 5px dotted;
 		border-spacing: 10px;
     }
-
-
-	/* Element setup */
-	br {
-		margin-bottom: 0rem;
-	}
-
-	li {
-		margin-bottom: 18px;
-	}
-
-	img.profile {
-		min-width: 240px;
-		height: 240px;
-		border-radius: 100%;
-		background-color: var(--clr-tan-secondary);
-	}
-
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-
-	@media only screen and (max-width: 1000px) {
-		/* Page Setup */
-		section {
-			width: 90%;
-		}
-	}
 </style>
