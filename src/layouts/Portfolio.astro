@@ -51,14 +51,15 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
 		<main>
             <section id="entry-box">
                 <div id="entry-info-box" class="flex flex-jsb">
-                    <div>
-                        <img src={portfolioEntry.image} alt={portfolioEntry.name} />
+                    <img src={portfolioEntry.image} alt={portfolioEntry.name} />
+                    <div id="entry-info-header">
+                        <h2 id="entry-mobile-header">{portfolioEntry.name}</h2>
                         <Button link={portfolioEntry.source} newTab={true}>View Project</Button>
                     </div>
                     <hr id="entry-barrier" />
                 </div>
     			<div id="content-box">
-                    <h2>{portfolioEntry.name}</h2>
+                    <h2 id="entry-desktop-header">{portfolioEntry.name}</h2>
                     <slot />
                     <Spacer />
                     {lastPage.title != "" ? <Button type="arrow-left" link={lastPage.link}>{lastPage.title}</Button> : <></>}
@@ -71,6 +72,12 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
 </html>
 
 <style>
+    section {
+        width: 90%;
+		max-width: 900px;
+		margin-bottom: 48px;
+	}
+
     #entry-box {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -87,6 +94,10 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
         border-radius: 6px;
     }
 
+    #entry-mobile-header {
+        display: none;
+    }
+
     #entry-info-box hr {
         width: 20px;
 
@@ -96,5 +107,42 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
 
     #content-box {
         grid-column: 2 / 5;
+    }
+
+    @media only screen and (max-width: 866px) {
+        
+        #entry-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        #entry-info-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start !important;
+            gap: 24px;
+        }
+
+        #entry-info-box img {
+            width: 80%;
+            max-width: 140px;
+            height: 80%;
+        }
+
+        #entry-info-header * {
+            margin: 0;
+        }
+
+        #entry-mobile-header {
+            display: block;
+        }
+        #entry-desktop-header {
+            display: none;
+        }
+
+        #entry-info-box hr {
+            display: none;
+        }
     }
 </style>
