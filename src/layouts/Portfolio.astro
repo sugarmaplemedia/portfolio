@@ -51,10 +51,12 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
 		<main>
             <section id="entry-box">
                 <div id="entry-info-box" class="flex flex-jsb">
-                    <img src={portfolioEntry.image} alt={portfolioEntry.name} />
-                    <div id="entry-info-header">
-                        <h2 id="entry-mobile-header">{portfolioEntry.name}</h2>
-                        <Button link={portfolioEntry.source} newTab={true}>View Project</Button>
+                    <div id="entry-image-info">
+                        <img src={portfolioEntry.image} alt={portfolioEntry.name} />
+                        <div id="entry-info-header">
+                            <h2 id="entry-mobile-header">{portfolioEntry.name}</h2>
+                            <Button link={portfolioEntry.source} newTab={true}>View Project</Button>
+                        </div>
                     </div>
                     <hr id="entry-barrier" />
                 </div>
@@ -92,6 +94,7 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
     #entry-info-box img {
         width: 80%;
         border-radius: 6px;
+        height: auto;
     }
 
     #entry-mobile-header {
@@ -117,7 +120,7 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
             gap: 12px;
         }
 
-        #entry-info-box {
+        #entry-image-info {
             display: flex;
             flex-direction: row;
             justify-content: flex-start !important;
@@ -127,7 +130,7 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
         #entry-info-box img {
             width: 80%;
             max-width: 140px;
-            height: 80%;
+            height: 100%;
         }
 
         #entry-info-header * {
@@ -143,6 +146,17 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
 
         #entry-info-box hr {
             display: none;
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+        #entry-info-box img {
+            width: 150px;
+            height: 150px;
+        }
+
+        #entry-info-header h2 {
+            font-size: 1.75rem !important;
         }
     }
 </style>
