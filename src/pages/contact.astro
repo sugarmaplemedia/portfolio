@@ -17,21 +17,26 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="box-w12">
             <h2>Send a Message</h2>
-            <form id="contact-form">
+            <div id="contact-form">
                 <div>
-                    <label for="email-addr">Email Address:</label>
-                    <input name="email-addr" type="email" placeholder="Email" required/>
+                    <label for="name-input">Name:</label>
+                    <input id="name-input" type="text" placeholder="John Smith" required/>
                 </div>
                 <div>
-                    <label for="email-sub">Subject:</label>
-                    <input name="email-sub" type="text" placeholder="Subject" required/>
+                    <label for="email-input">Email Address:</label>
+                    <input id="email-input" type="email" placeholder="johnsmith@orchard.co" required/>
                 </div>
                 <div>
-                    <label for="email-msg">Message:</label>
-                    <textarea name="email-msg"></textarea>    
+                    <label for="subject-input">Subject:</label>
+                    <input id="subject-input" type="text" placeholder="Subject" required/>
                 </div>
-                <input class="button" type="submit" value="Send Message" required/>
-            </form>
+                <div>
+                    <label for="msg-input">Message:</label>
+                    <textarea id="msg-input" required></textarea>    
+                </div>
+                <button id="form-button" class="button">Send Message</button>
+            </div>
+            
         </div>
     </section>
 </Layout>
@@ -82,10 +87,21 @@ import Layout from '../layouts/Layout.astro';
     }
 
     #contact-form .button {
+        padding: 6px;
         color: var(--clr-tan-primary);
         background-color: var(--clr-tan-tertiary);
-        border: 3px solid var(--clr-tan-secondary);;
+        border: 3px solid var(--clr-tan-secondary);
+        border-radius: 12px;
     }
+    #contact-form .button:disabled {
+        filter: grayscale(90%);
+    }
+    #contact-form .button:disabled:hover {
+        border-color: var(--clr-tan-secondary);
+        background-color: var(--clr-tan-tertiary);
+        cursor: initial;
+    }
+
     #contact-form .button:hover {
         background-color: var(--clr-tan-secondary);
         border-color: var(--clr-tan-primary);
@@ -98,3 +114,36 @@ import Layout from '../layouts/Layout.astro';
 		}
     }
 </style>
+
+<script>
+    const inputs = {
+        name: (<HTMLInputElement>document.getElementById("name-input")),
+        email: (<HTMLInputElement>document.getElementById("email-input")),
+        subject: (<HTMLInputElement>document.getElementById("subject-input")),
+        message: (<HTMLInputElement>document.getElementById("msg-input")),
+    };
+    const inputButton = (<HTMLButtonElement>document.getElementById("form-button"));
+
+    if (inputButton) {
+        inputButton.addEventListener("click", () => {
+            inputButton.disabled = true;
+            fetch("https://formsubmit.co/ajax/harrison@sm.media", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: inputs.name.value,
+                    email: inputs.email.value,
+                    subject: inputs.subject.value,
+                    message: inputs.message.value
+                })
+            }).then(() => {
+                Object.values(inputs).forEach(input => {
+                    input.value = "";
+                });
+            });
+        });
+    }
+</script>
