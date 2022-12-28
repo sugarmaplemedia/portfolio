@@ -9,17 +9,16 @@ import Layout from "../layouts/Layout.astro";
         <h1>About Me</h1>
     </section>
     <section class="columns">
-        <div id="about-image" class="box-w13">
-
-        </div>
-        <div class="box-w23 txt-alj">
+        <div class="txt-alj">
+            <div class="flex flex-dc flex-ac">
+                <img src="/images/photos/hb-about.jpg" alt="Harrison Bouche, sepia filter portrait" width="250" height="261">
+                <span id="photo-underline"></span>
+            </div>
+            <Spacer size="sml" />
             <h4>Hail and well met!</h4>
-            <p>
-                Thanks for taking the time to check out my website. If we weren’t already introduced, my name is Harrison Bouche. I am a web developer and designer from the Upper Peninsula of Michigan. If you catch me outside of work, you’ll likely find me singing, mountain biking, sipping coffee, or listening to podcasts somewhere in the rolling hills of Marquette.
-                <Spacer size="sml"/>
-                I am a senior currently pursuing three majors at Northern Michigan University: Communication Studies, Multimedia Production, and Mobile and Web Application Development. All of the skills I have learned combine in my business, <span class="txt-wb">Sugar Maple Media</span>, where I provide digital development and design services with a focus on quality consultation.
-                <Spacer />
-            </p>
+            <p>Thanks for taking the time to check out my website. If we weren’t already introduced, my name is Harrison Bouche. I am a web developer and designer from the Upper Peninsula of Michigan. If you catch me outside of work, you’ll likely find me singing, mountain biking, sipping coffee, or listening to podcasts somewhere in the rolling hills of Marquette.</p>
+            <p>I am a senior currently pursuing three majors at Northern Michigan University: Communication Studies, Multimedia Production, and Mobile and Web Application Development. All of the skills I have learned combine in my business, <span class="txt-wb">Sugar Maple Media</span>, where I provide digital development and design services with a focus on quality consultation.</p>
+            <br />
             <h4>What is a Digital Architect?</h4>
             <p>
                 Expanding your digital presence is a very daunting task for many businesses and individuals. However, I see it as an exciting world where you have endless opportunities to build and expand your services. As your Digital Architect, I take on the task of designing and developing your website, along with administering various digital tools you may need to prosper in the digital space.
@@ -33,9 +32,10 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-    #about-image {
-        background-image: linear-gradient(0deg, var(--clr-tan-secondary) 10%, var(--clr-tan-bg)) ;
-        border-radius: 24px;
+    #photo-underline {
+        width: 360px;
+        height: 4px;
+        background-image: linear-gradient(90deg, var(--clr-tan-bg) 1%, var(--clr-tan-secondary), var(--clr-tan-bg) 99%);
     }
 
     @media only screen and (max-width: 800px) {
