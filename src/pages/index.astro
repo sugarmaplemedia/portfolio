@@ -1,22 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button';
-import GalleryStatic from '../components/GalleryStatic.astro';
+import Layout from "../layouts/Layout.astro"
+import Button from "../components/Button.svelte"
+import GalleryStatic from "../components/GalleryStatic.astro"
 ---
 
 <Layout title="Harrison Bouche" activePage="Home">
 	<section>
-		<h1>Harrison Bouche, <span class="text-gradient">Digital Architect.</span></h1>
+		<h1>
+			Harrison Bouche,
+			<span class="text-gradient">Digital Architect.</span>
+		</h1>
 	</section>
 	<section class="columns">
 		<div style="margin-bottom: 18px;">
-			<img class="profile" src="/images/photos/hb-landing.jpg" alt="Harrison Bouche, sitting on a hay bale in a sunflower field" width="240" height="240"/>
+			<img
+				class="profile"
+				src="/images/photos/hb-landing.jpg"
+				alt="Harrison Bouche, sitting on a hay bale in a sunflower field"
+				width="240"
+				height="240"
+			/>
 		</div>
 		<hr class="separator" />
 		<div class="box-w23">
-			<p>Nice to meet you! My name is Harrison Bouche. I am a web developer with additional skills in graphic design, audio production, and business communication. My goal is to provide extraordinary service while meeting your digital needs in a timely manner.</p>
-			<p>I am currently open for project inquiries. Feel free to reach out!</p>
-			<Button link="contact">Let's chat!</Button>
+			<p>
+				Nice to meet you! My name is Harrison Bouche. I am a web
+				developer with additional skills in graphic design, audio
+				production, and business communication. My goal is to provide
+				extraordinary service while meeting your digital needs in a
+				timely manner.
+			</p>
+			<p>
+				I am currently open for project inquiries. Feel free to reach
+				out!
+			</p>
+			<Button href="/contact">Let's chat!</Button>
 		</div>
 	</section>
 	<section>
@@ -53,7 +71,7 @@ import GalleryStatic from '../components/GalleryStatic.astro';
 		border: 0;
 		border-right: 5px dotted;
 		border-spacing: 10px;
-  	}
+	}
 
 	@media only screen and (max-width: 1000px) {
 		h1 {
@@ -78,7 +96,5 @@ import GalleryStatic from '../components/GalleryStatic.astro';
 		.box-w23 {
 			width: 100%;
 		}
-
 	}
-
 </style>

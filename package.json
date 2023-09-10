@@ -16,17 +16,12 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/react": "^1.2.0",
-		"@types/react": "^18.0.21",
+		"@astrojs/svelte": "^4.0.2",
 		"astro": "latest",
-		"astro-icon": "^0.7.3",
-		"clsx": "^1.2.1",
 		"motion": "^10.14.2",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
-		"@iconify-icon/react": "^1.0.1",
-		"eslint-plugin-react-hooks": "^4.6.0"
+		"@iconify/svelte": "^3.1.4"
 	}
 }

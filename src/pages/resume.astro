@@ -1,146 +1,237 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Icon } from "@iconify-icon/react";
+import Layout from "../layouts/Layout.astro"
+import Icon from "@iconify/svelte"
 ---
 
 <Layout activePage="Resume" title="Resume | Harrison Bouche">
-    <section>
-        <h1>Resume</h1>
-    </section>
-    <section>
-        <h2>Skills and Education</h2>
-        <div id="skills-experience-box">
-            <div id="skills-box" class="box-w12">
-                <ul>
-                    <li class="skill">Highly motivated and organized person who works well with others; excellent communication skills.</li>
-                    <li class="skill">Skilled in website development & administration, video editing, graphic design, IT administration, sound engineering, and music production.</li>
-                    <li class="skill">Deeply involved in college audition choir; plays the piano, viola, and sings.</li>
-                </ul>
-            </div>
-            <div id="degree-box" class="box-w12">
-                <div class="degree flex flex-ac">
-                    <Icon className="bubble" icon="tabler:certificate" />
-                    <div>
-                        <p>
-                            <span class="txt-wb">Northern Michigan University</span><br />
-                            B.S. Mobile and Web App Development<br />
-                            <span class="txt-wi txt-sml">2020-2024</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="degree flex flex-ac">
-                    <Icon className="bubble" icon="tabler:certificate" />
-                    <div>
-                        <p>
-                            <span class="txt-wb">Northern Michigan University</span><br />
-                            B.S. Communication Studies<br />
-                            <span class="txt-wi txt-sml">2020-2024</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="degree flex flex-ac">
-                    <Icon className="bubble" icon="tabler:certificate" />
-                    <div>
-                        <p>
-                            <span class="txt-wb">Northern Michigan University</span><br />
-                            B.S. Multimedia Production<br />
-                            <span class="txt-wi txt-sml">2020-2024</span>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <a class="link-noline" target="_blank" href="https://www.freecodecamp.org/certification/fcc8e0f184f-3c40-4fda-ae56-3f7fcada3917/javascript-algorithms-and-data-structures">
-                        <Icon className="bubble sml link" icon="tabler:file-certificate" title="fCC: JavaScript Algorithms and Data Structures" />
-                    </a>
-                    <a class="link-noline" target="_blank" href="https://www.freecodecamp.org/certification/fcc8e0f184f-3c40-4fda-ae56-3f7fcada3917/front-end-development-libraries">
-                        <Icon className="bubble sml link" icon="tabler:file-certificate" title="Front End Development Libraries" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <h2>Work Experience</h2>
-        <ul id="work-box">
-            <li>
-                <h4>CEO, Digital Architect</h4>
-                <p class="txt-wi">Sugar Maple Media, June 2021 — Now</p>
-                <p>Single owner of business, providing web design, graphic design, and content production services to a growing list of local clients, non-profit and for-profit alike.</p>
-            </li>
-            <li>
-                <h4>I.T. Intern</h4>
-                <p class="txt-wi">Engineered Machine Products, May 2021 — August 2021</p>
-                <p>Staging and deployment of servers and computers for nearly three hundred employees at a large worksite. High-level administration over Windows domain and network.</p>
-            </li>
-            <li>
-                <h4>Digital Media Tutor</h4>
-                <p class="txt-wi">Northern Michigan University, September 2020 — October 2021</p>
-                <p>Tutor of audio-video production applications; setup and monitoring of VR hardware; graphic design of student portraits and department assets.</p>
-            </li>
-            <li>
-                <h4>Store Associate</h4>
-                <p class="txt-wi">Marshalls, July 2019 — January 2021</p>
-                <p>Checking out customers and persuading them to sign up for the in-store card; pushing stock; supervision of fitting rooms.</p>
-            </li>
-            <li>
-                <h4>Student Technician</h4>
-                <p class="txt-wi">Northern Michigan University, August 2020 — November 2020</p>
-                <p>Delivering and troubleshooting of audio-visual equipment all around campus, assisting users with specific requests unable to be resolved by NMU IT support, and putting on campus events.</p>
-            </li>
-            <li>
-                <h4>I.T. Technical Assistant</h4>
-                <p class="txt-wi">Bay de Noc College, May 2020 — August 2020</p>
-                <p>User helpdesk assistance ranging from password resets to device troubleshooting; setup and deployment of MacOS and Windows computer labs; supervision over in-use technology classrooms.</p>
-            </li>
-            <li>
-                <h4>Hardware/Software Technician</h4>
-                <p class="txt-wi">Bethany Lutheran Church, May 2020 — August 2020</p>
-                <p>Mapping of all hardware, software, and user information within the church; setup of livestreaming equipment for church service broadcasts; reviewing of church compliance with copyright laws and guidelines.</p>
-            </li>
-            <li>
-                <h4>Kitchen Staff</h4>
-                <p class="txt-wi">Dobber's Pasties, June 2018 — June 2019</p>
-                <p>Working as a team with other staff in multiple areas of production including running commercial mixers, dough cutters, and more.</p>
-            </li>
-            <li>
-                <h4>Cleaning Crew</h4>
-                <p class="txt-wi">Private VRBO Rental, June 2018 — June 2019</p>
-                <p>Independent cleaning and preparation of 2,500 sq. ft. home in preparation of incoming guests. Responsible for all the cleaning and set-up of all 4 bedrooms, 3 baths, kitchen, dining, living room, and grounds.</p>
-            </li>
-        </ul>
-    </section>
+	<section>
+		<h1>Resume</h1>
+	</section>
+	<section>
+		<h2>Skills and Education</h2>
+		<div id="skills-experience-box">
+			<div id="skills-box" class="box-w12">
+				<ul>
+					<li class="skill">
+						Highly motivated and organized person who works well
+						with others; excellent communication skills.
+					</li>
+					<li class="skill">
+						Skilled in website development & administration, video
+						editing, graphic design, IT administration, sound
+						engineering, and music production.
+					</li>
+					<li class="skill">
+						Deeply involved in college audition choir; plays the
+						piano, viola, and sings.
+					</li>
+				</ul>
+			</div>
+			<div id="degree-box" class="box-w12">
+				<div class="degree flex flex-ac">
+					<Icon
+						class="bubble"
+						icon="tabler:certificate"
+						client:load
+					/>
+					<div>
+						<p>
+							<span class="txt-wb"
+								>Northern Michigan University</span
+							><br />
+							B.S. Mobile and Web App Development<br />
+							<span class="txt-wi txt-sml">2020-2024</span>
+						</p>
+					</div>
+				</div>
+				<div class="degree flex flex-ac">
+					<Icon
+						class="bubble"
+						icon="tabler:certificate"
+						client:load
+					/>
+					<div>
+						<p>
+							<span class="txt-wb"
+								>Northern Michigan University</span
+							><br />
+							B.S. Communication Studies<br />
+							<span class="txt-wi txt-sml">2020-2024</span>
+						</p>
+					</div>
+				</div>
+				<div class="degree flex flex-ac">
+					<Icon
+						class="bubble"
+						icon="tabler:certificate"
+						client:load
+					/>
+					<div>
+						<p>
+							<span class="txt-wb"
+								>Northern Michigan University</span
+							><br />
+							B.S. Multimedia Production<br />
+							<span class="txt-wi txt-sml">2020-2024</span>
+						</p>
+					</div>
+				</div>
+				<div>
+					<a
+						class="link-noline"
+						target="_blank"
+						href="https://www.freecodecamp.org/certification/fcc8e0f184f-3c40-4fda-ae56-3f7fcada3917/javascript-algorithms-and-data-structures">
+						<Icon
+							class="bubble sml link"
+							icon="tabler:file-certificate"
+							title="fCC: JavaScript Algorithms and Data Structures"
+							client:load
+						/>
+					</a>
+					<a
+						class="link-noline"
+						target="_blank"
+						href="https://www.freecodecamp.org/certification/fcc8e0f184f-3c40-4fda-ae56-3f7fcada3917/front-end-development-libraries">
+						<Icon
+							class="bubble sml link"
+							icon="tabler:file-certificate"
+							title="Front End Development Libraries"
+							client:load
+						/>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<h2>Work Experience</h2>
+		<ul id="work-box">
+			<li>
+				<h4>CEO, Digital Architect</h4>
+				<p class="txt-wi">Sugar Maple Media, June 2021 — Now</p>
+				<p>
+					Single owner of business, providing web design, graphic
+					design, and content production services to a growing list of
+					local clients, non-profit and for-profit alike.
+				</p>
+			</li>
+			<li>
+				<h4>I.T. Intern</h4>
+				<p class="txt-wi">
+					Engineered Machine Products, May 2021 — August 2021
+				</p>
+				<p>
+					Staging and deployment of servers and computers for nearly
+					three hundred employees at a large worksite. High-level
+					administration over Windows domain and network.
+				</p>
+			</li>
+			<li>
+				<h4>Digital Media Tutor</h4>
+				<p class="txt-wi">
+					Northern Michigan University, September 2020 — October 2021
+				</p>
+				<p>
+					Tutor of audio-video production applications; setup and
+					monitoring of VR hardware; graphic design of student
+					portraits and department assets.
+				</p>
+			</li>
+			<li>
+				<h4>Store Associate</h4>
+				<p class="txt-wi">Marshalls, July 2019 — January 2021</p>
+				<p>
+					Checking out customers and persuading them to sign up for
+					the in-store card; pushing stock; supervision of fitting
+					rooms.
+				</p>
+			</li>
+			<li>
+				<h4>Student Technician</h4>
+				<p class="txt-wi">
+					Northern Michigan University, August 2020 — November 2020
+				</p>
+				<p>
+					Delivering and troubleshooting of audio-visual equipment all
+					around campus, assisting users with specific requests unable
+					to be resolved by NMU IT support, and putting on campus
+					events.
+				</p>
+			</li>
+			<li>
+				<h4>I.T. Technical Assistant</h4>
+				<p class="txt-wi">Bay de Noc College, May 2020 — August 2020</p>
+				<p>
+					User helpdesk assistance ranging from password resets to
+					device troubleshooting; setup and deployment of MacOS and
+					Windows computer labs; supervision over in-use technology
+					classrooms.
+				</p>
+			</li>
+			<li>
+				<h4>Hardware/Software Technician</h4>
+				<p class="txt-wi">
+					Bethany Lutheran Church, May 2020 — August 2020
+				</p>
+				<p>
+					Mapping of all hardware, software, and user information
+					within the church; setup of livestreaming equipment for
+					church service broadcasts; reviewing of church compliance
+					with copyright laws and guidelines.
+				</p>
+			</li>
+			<li>
+				<h4>Kitchen Staff</h4>
+				<p class="txt-wi">Dobber's Pasties, June 2018 — June 2019</p>
+				<p>
+					Working as a team with other staff in multiple areas of
+					production including running commercial mixers, dough
+					cutters, and more.
+				</p>
+			</li>
+			<li>
+				<h4>Cleaning Crew</h4>
+				<p class="txt-wi">Private VRBO Rental, June 2018 — June 2019</p>
+				<p>
+					Independent cleaning and preparation of 2,500 sq. ft. home
+					in preparation of incoming guests. Responsible for all the
+					cleaning and set-up of all 4 bedrooms, 3 baths, kitchen,
+					dining, living room, and grounds.
+				</p>
+			</li>
+		</ul>
+	</section>
 </Layout>
 
 <style>
-    #skills-experience-box {
-        display: flex;
-    }
+	#skills-experience-box {
+		display: flex;
+	}
 
-    #skills-box {
-        padding-right: 36px;
-    }
+	#skills-box {
+		padding-right: 36px;
+	}
 
-    .degree {
-        margin-bottom: 18px;
-    }
+	.degree {
+		margin-bottom: 18px;
+	}
 
-    #work-box li {
-        width: 66%;
-        
-    }
-    #work-box li:nth-child(even) {
-        margin: 36px 0;
-    }
+	#work-box li {
+		width: 66%;
+	}
+	#work-box li:nth-child(even) {
+		margin: 36px 0;
+	}
 
-    @media only screen and (max-width: 650px) {
-        #skills-experience-box {
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-        }
+	@media only screen and (max-width: 650px) {
+		#skills-experience-box {
+			flex-direction: column;
+			align-items: center;
+			gap: 24px;
+		}
 
-        #work-box li {
-            width: 92%;
-        }
-    }
+		#work-box li {
+			width: 92%;
+		}
+	}
 </style>

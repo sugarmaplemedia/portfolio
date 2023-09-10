@@ -1,7 +1,7 @@
 ---
-import { Icon } from '@iconify-icon/react';
-import GalleryStatic from '../../components/GalleryStatic.astro';
-import Layout from '../../layouts/Layout.astro';
+import Icon from "@iconify/svelte"
+import GalleryStatic from "../../components/GalleryStatic.astro"
+import Layout from "../../layouts/Layout.astro"
 ---
 
 <Layout title="Harrison Bouche" activePage="Portfolio">
@@ -11,86 +11,211 @@ import Layout from '../../layouts/Layout.astro';
 	<section class="portfolio-service-box">
 		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
 			<div class="portfolio-service">
-				<Icon className="portfolio-service" icon="tabler:browser" />
+				<Icon
+					class="portfolio-service"
+					icon="tabler:browser"
+					client:load
+				/>
 				<h2>Front End<br />Development</h2>
 			</div>
 			<div class="flex flex-gmd">
-				<Icon className="portfolio-proficiency" icon="tabler:brand-react" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-vue" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-html5" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-javascript" />
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-react"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-vue"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-html5"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-javascript"
+					client:load
+				/>
 			</div>
 		</div>
 		<div class="box-w23">
-			<GalleryStatic dbListName="portfolio" size="sml" tag="wdev" count={3} />
+			<GalleryStatic
+				dbListName="portfolio"
+				size="sml"
+				tag="wdev"
+				count={3}
+			/>
 		</div>
 	</section>
 	<section class="portfolio-service-box">
 		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
 			<div class="portfolio-service">
-				<Icon className="portfolio-service" icon="tabler:device-desktop" />
+				<Icon
+					class="portfolio-service"
+					icon="tabler:device-desktop"
+					client:load
+				/>
 				<h2>Website<br />Design & UI</h2>
 			</div>
 			<div class="flex flex-gmd">
-				<Icon className="portfolio-proficiency" icon="tabler:brand-figma" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-adobe" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-wordpress" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-css3" />
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-figma"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-adobe"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-wordpress"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-css3"
+					client:load
+				/>
 			</div>
 		</div>
 		<div class="box-w23">
-			<GalleryStatic dbListName="portfolio" size="sml" tag="wdes" count={3} />
+			<GalleryStatic
+				dbListName="portfolio"
+				size="sml"
+				tag="wdes"
+				count={3}
+			/>
 		</div>
 	</section>
 	<section class="portfolio-service-box">
 		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
 			<div class="portfolio-service">
-				<Icon className="portfolio-service" icon="tabler:cloud-computing" />
+				<Icon
+					class="portfolio-service"
+					icon="tabler:cloud-computing"
+					client:load
+				/>
 				<h2>Digital<br />Management</h2>
 			</div>
 			<div class="flex flex-gmd">
-				<Icon className="portfolio-proficiency" icon="tabler:brand-meta" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-google" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-wordpress" />
-				<Icon className="portfolio-proficiency" icon="tabler:server-2" />
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-meta"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-google"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-wordpress"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:server-2"
+					client:load
+				/>
 			</div>
 		</div>
 		<div class="box-w23">
-			<GalleryStatic dbListName="portfolio" size="sml" tag="da" count={3} />
+			<GalleryStatic
+				dbListName="portfolio"
+				size="sml"
+				tag="da"
+				count={3}
+			/>
 		</div>
 	</section>
 	<section class="portfolio-service-box">
 		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
 			<div class="portfolio-service">
-				<Icon className="portfolio-service" icon="tabler:message-2" />
+				<Icon
+					class="portfolio-service"
+					icon="tabler:message-2"
+					client:load
+				/>
 				<h2>Digital<br />Marketing</h2>
 			</div>
 			<div class="flex flex-gmd">
-				<Icon className="portfolio-proficiency" icon="tabler:brand-meta" />
-				<Icon className="portfolio-proficiency" icon="tabler:brand-google" />
-				<Icon className="portfolio-proficiency" icon="tabler:chalkboard" />
-				<Icon className="portfolio-proficiency" icon="tabler:file-analytics" />
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-meta"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:brand-google"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:chalkboard"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:file-analytics"
+					client:load
+				/>
 			</div>
 		</div>
 		<div class="box-w23">
-			<GalleryStatic dbListName="portfolio" size="sml" tag="dm" count={3} />
+			<GalleryStatic
+				dbListName="portfolio"
+				size="sml"
+				tag="dm"
+				count={3}
+			/>
 		</div>
 	</section>
 	<section class="portfolio-service-box">
 		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
 			<div class="portfolio-service">
-				<Icon className="portfolio-service" icon="tabler:video" />
+				<Icon
+					class="portfolio-service"
+					icon="tabler:video"
+					client:load
+				/>
 				<h2>Multimedia<br />Production</h2>
 			</div>
 			<div class="flex flex-gmd">
-				<Icon className="portfolio-proficiency" icon="tabler:camera" />
-				<Icon className="portfolio-proficiency" icon="tabler:video" />
-				<Icon className="portfolio-proficiency" icon="tabler:microphone" />
-				<Icon className="portfolio-proficiency" icon="tabler:devices-pc" />
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:camera"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:video"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:microphone"
+					client:load
+				/>
+				<Icon
+					class="portfolio-proficiency"
+					icon="tabler:devices-pc"
+					client:load
+				/>
 			</div>
 		</div>
 		<div class="box-w23">
-			<GalleryStatic dbListName="portfolio" size="sml" tag="cc" count={3} />
+			<GalleryStatic
+				dbListName="portfolio"
+				size="sml"
+				tag="cc"
+				count={3}
+			/>
 		</div>
 	</section>
 </Layout>
@@ -107,7 +232,7 @@ import Layout from '../../layouts/Layout.astro';
 	}
 	.portfolio-service h2 {
 		margin-bottom: 0;
-		
+
 		font-size: 1.75rem;
 		line-height: 1.75rem;
 		text-transform: uppercase;

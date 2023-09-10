@@ -3,7 +3,7 @@ import data from "../databases/galleries.json";
 import Menu from '../components/Menu.astro';
 import Footer from '../components/Footer.astro';
 import '../stylesheets/defaults.css';
-import Button from '../components/Button';
+import Button from '../components/Button.svelte';
 import Spacer from '../components/Spacer.astro';
 
 export interface Props {
@@ -55,7 +55,7 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
                         <img src={portfolioEntry.image} alt={portfolioEntry.name} />
                         <div id="entry-info-header">
                             <h2 id="entry-mobile-header">{portfolioEntry.name}</h2>
-                            <Button link={portfolioEntry.source} newTab={true}>View Project</Button>
+                            <Button href={portfolioEntry.source} newTab={true}>View Project</Button>
                         </div>
                     </div>
                     <hr id="entry-barrier" />
@@ -64,8 +64,8 @@ const portfolioEntry = data["portfolio"].entries.filter((item: { name: string; }
                     <h2 id="entry-desktop-header">{portfolioEntry.name}</h2>
                     <slot />
                     <Spacer />
-                    {lastPage.title != "" ? <Button type="arrow-left" link={lastPage.link}>{lastPage.title}</Button> : <></>}
-                    {nextPage.title != "" ? <Button type="arrow-right" link={nextPage.link}>{nextPage.title}</Button> : <></>}
+                    {lastPage.title != "" ? <Button type="arrow left" href={lastPage.link}>{lastPage.title}</Button> : <></>}
+                    {nextPage.title != "" ? <Button type="arrow right" href={nextPage.link}>{nextPage.title}</Button> : <></>}
                 </div>
             </section>
 		</main>

@@ -1,238 +1,243 @@
 ---
-import { Icon } from "@iconify-icon/react";
+import Icon from "@iconify/svelte"
 
-const menuPages =
-    [
-        {
-            "name": "Home",
-            "url": "/",
-            "icon": "tabler:home"
-        },
-        {
-            "name": "Portfolio",
-            "url": "/portfolio",
-            "icon": "tabler:package"
-        },
-        {
-            "name": "Resume",
-            "url": "/resume",
-            "icon": "tabler:notebook"
-        },
-        {
-            "name": "About Me",
-            "url": "/about-me",
-            "icon": "tabler:user"
-        },
-        {
-            "name": "Contact",
-            "url": "/contact",
-            "icon": "tabler:mail"
-        }
-    ];
+const menuPages = [
+	{
+		name: "Home",
+		url: "/",
+		icon: "tabler:home",
+	},
+	{
+		name: "Portfolio",
+		url: "/portfolio",
+		icon: "tabler:package",
+	},
+	{
+		name: "Resume",
+		url: "/resume",
+		icon: "tabler:notebook",
+	},
+	{
+		name: "About Me",
+		url: "/about-me",
+		icon: "tabler:user",
+	},
+	{
+		name: "Contact",
+		url: "/contact",
+		icon: "tabler:mail",
+	},
+]
 
-const {activePage} = Astro.props;
+const { activePage } = Astro.props
 ---
 
-<menu class="desktop">
-    <Icon className="hamburger" icon="tabler:menu-2" />
-    <div id="menu-box" class="mobileView">
-        <div id="menu-item-box">
-            {menuPages.map((item) => (
-                <a class={"menu-item" + (activePage === item.name ? " active" : " not-active")} href={item.url}>
-                    <Icon className="menu-icon" icon={item.icon}/>
-                    <p>{item.name}</p>
-                </a>
-              ))}
-        </div>
-        <hr id="menu-bar"/>
-    </div>
-</menu>
-
 <script defer>
-    let hamburger = document.getElementsByClassName("hamburger")[0];
-    let menu = document.getElementById("menu-box");
+	let hamburger = document.getElementsByClassName("hamburger")[0]
+	let menu = document.getElementById("menu-box")
 
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("flip");
-        menu.classList.toggle("mobileView");
-    });
+	hamburger.addEventListener("click", () => {
+		hamburger.classList.toggle("flip")
+		menu.classList.toggle("mobileView")
+	})
 </script>
 
+<menu class="desktop">
+	<Icon class="hamburger" icon="tabler:menu-2" client:load />
+	<div id="menu-box" class="mobileView">
+		<div id="menu-item-box">
+			{
+				menuPages.map((item) => (
+					<a
+						class={
+							"menu-item" +
+							(activePage === item.name
+								? " active"
+								: " not-active")
+						}
+						href={item.url}>
+						<Icon class="menu-icon" icon={item.icon} client:load />
+						<p>{item.name}</p>
+					</a>
+				))
+			}
+		</div>
+		<hr id="menu-bar" />
+	</div>
+</menu>
+
 <style>
-    menu {
-        width: 660px;
-        margin: 0 24px 0 auto;
-        padding: 6px 12px 12px 12px;
-        position: static;
-        top: -40px;
-        z-index: 0;
+	menu {
+		width: 660px;
+		margin: 0 24px 0 auto;
+		padding: 6px 12px 12px 12px;
+		position: static;
+		top: -40px;
+		z-index: 0;
 
-        background-color: var(--clr-tan-bg);
-        border-radius: 24px;
-        box-shadow: -12px 12px 3px var(--clr-tan-bg);
-    }
+		background-color: var(--clr-tan-bg);
+		border-radius: 24px;
+		box-shadow: -12px 12px 3px var(--clr-tan-bg);
+	}
 
-    .hamburger {
-        display: none;
-    }
+	.hamburger {
+		display: none;
+	}
 
-    #menu-item-box {
-        width: 600px;
-        height: 100px;
-        margin-bottom: 10px;
+	#menu-item-box {
+		width: 600px;
+		height: 100px;
+		margin-bottom: 10px;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
 
-    .menu-item {
-        margin: 0 5px;
-        padding: 10px 10px;
+	.menu-item {
+		margin: 0 5px;
+		padding: 10px 10px;
 
-        display: flex;
+		display: flex;
 
-        color: var(--clr-tan-primary);
-        text-decoration: none;
-        font-weight: bold;
+		color: var(--clr-tan-primary);
+		text-decoration: none;
+		font-weight: bold;
 
-        border-radius: 12px;
+		border-radius: 12px;
 
-        transition: 0.3s cubic-bezier(0.55,2,0.36,0.65);
-    }
-    .menu-item:focus {
-        outline: none;
-    }
+		transition: 0.3s cubic-bezier(0.55, 2, 0.36, 0.65);
+	}
+	.menu-item:focus {
+		outline: none;
+	}
 
-    .active {
-        background-color: var(--clr-tan-tertiary);
-        border: 2px solid var(--clr-tan-secondary);
-        box-shadow: 0 3px 10px var(--clr-tan-tertiary);
-    }
+	.active {
+		background-color: var(--clr-tan-tertiary);
+		border: 2px solid var(--clr-tan-secondary);
+		box-shadow: 0 3px 10px var(--clr-tan-tertiary);
+	}
 
-    .active p {
-        pointer-events: none;
-    }
+	.active p {
+		pointer-events: none;
+	}
 
-    .menu-icon {
-        height: 20px;
-        margin: 3px 3px 0 0;
-        transition: 0.2s ease-in 0.05s;
-    }
+	.menu-icon {
+		height: 20px;
+		margin: 3px 3px 0 0;
+		transition: 0.2s ease-in 0.05s;
+	}
 
-    .not-active .menu-icon {
-        border-bottom: 2px solid var(--clr-tan-primary);
-    }
+	.not-active .menu-icon {
+		border-bottom: 2px solid var(--clr-tan-primary);
+	}
 
-    .not-active::before {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        margin-top: 3px;
+	.not-active::before {
+		content: "";
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		margin-top: 3px;
 
-        display: block;
-        z-index: 2;
+		display: block;
+		z-index: 2;
 
-        border-bottom: 2px solid var(--clr-tan-bg);
+		border-bottom: 2px solid var(--clr-tan-bg);
 
-        transition: 0.2s ease-in 0.05s;
-    }
+		transition: 0.2s ease-in 0.05s;
+	}
 
-    .not-active:hover .menu-icon {
-        margin: -3px 3px 0 0;
-        padding-bottom: 1px;
-    }
+	.not-active:hover .menu-icon {
+		margin: -3px 3px 0 0;
+		padding-bottom: 1px;
+	}
 
-    .not-active:hover::before {
-        width: 0px;
-        padding-bottom: 1px;
-        margin: -3px 3px 0 0;
+	.not-active:hover::before {
+		width: 0px;
+		padding-bottom: 1px;
+		margin: -3px 3px 0 0;
+	}
 
-    }
+	.menu-item p {
+		display: inline-block;
+		margin: 0 3px;
+		transition: 0.3s ease-out;
+	}
 
-    .menu-item p {
-        display: inline-block;
-        margin: 0 3px;
-        transition: 0.3s ease-out;
-    }
+	.not-active:hover p {
+		transform: translateY(-3px);
+	}
 
-    .not-active:hover p {
-        transform: translateY(-3px);
-    }
+	#menu-bar {
+		width: 600px;
+		height: 0px;
 
-    #menu-bar {
-        width: 600px;
-        height: 0px;
+		border: 0;
+		border-top: 5px dotted;
+	}
 
-        border: 0;
-        border-top: 5px dotted;
-    }
+	@media only screen and (max-width: 1000px) {
+		menu {
+			margin: auto;
+		}
+	}
 
-    @media only screen and (max-width: 1000px) {
-        menu {
-            margin: auto;
-        }
-    }
+	@media only screen and (max-width: 670px) {
+		menu {
+			width: 95%;
+		}
 
-    @media only screen and (max-width: 670px) {
-        menu {
-            width: 95%;
-        }
+		#menu-item-box {
+			max-width: 100%;
+		}
 
-        #menu-item-box {
-            max-width: 100%;
-        }
+		#menu-bar {
+			width: 100%;
+		}
+	}
 
-        #menu-bar {
-            width: 100%;
-        }
-    }
+	@media only screen and (max-width: 640px) {
+		menu {
+			font-size: 1.25rem;
+		}
 
-    @media only screen and (max-width: 640px) {
+		.hamburger {
+			margin-top: 18px;
 
-        menu {
+			position: relative;
+			z-index: 2;
+			left: 6px;
 
-            font-size: 1.25rem;
-        }
+			font-size: 2.5rem;
 
-        .hamburger {
-            margin-top: 18px;
+			display: block;
 
-            position: relative;
-            z-index: 2;
-            left: 6px;
+			transition: 3s linear;
+		}
 
-            font-size: 2.5rem;
+		.mobileView {
+			display: none;
+		}
 
-            display: block;
+		#menu-item-box {
+			width: 100%;
+			height: auto;
+			padding: 84px 24px 24px;
 
-            transition: 3s linear;
-        }
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
 
-        .mobileView {
-            display: none;
-        }
+			flex-direction: column;
+			align-items: flex-start;
 
-        #menu-item-box {
-            width: 100%;
-            height: auto;
-            padding: 84px 24px 24px;
+			background-color: var(--clr-tan-tertiary);
+			box-shadow: -3px -3px 18px var(--clr-tan-secondary);
+		}
 
-            z-index: 1;
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            flex-direction: column;
-            align-items: flex-start;
-
-            background-color: var(--clr-tan-tertiary);
-            box-shadow: -3px -3px 18px var(--clr-tan-secondary);
-        }
-
-        #menu-bar {
-            display: none;
-        }
-    }
+		#menu-bar {
+			display: none;
+		}
+	}
 </style>
