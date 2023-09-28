@@ -1,46 +1,31 @@
 ---
+import Layout from "@layouts/base.astro"
+import GalleryStatic from "@components/GalleryStatic.astro"
+import SectionHeading from "@components/portfolio/SectionHeading.svelte"
+import SlotFragment from "@components/shared/SlotFragment.astro"
+
 import Icon from "@iconify/svelte"
-import GalleryStatic from "../../components/GalleryStatic.astro"
-import Layout from "../../layouts/Layout.astro"
+import IconTablerBrowser from "~icons/tabler/browser"
+import IconTablerDeviceDesktop from "~icons/tabler/device-desktop"
+import IconTablerBrandReact from "~icons/tabler/brand-react"
+import IconTablerBrandVue from "~icons/tabler/brand-vue"
+import IconTablerBrandSvelte from "~icons/tabler/brand-svelte"
+import IconTablerBrandJavascript from "~icons/tabler/brand-javascript"
 ---
 
-<Layout title="Harrison Bouche" activePage="Portfolio">
+<Layout title="Harrison Bouche">
 	<section>
 		<h1>Portfolio</h1>
 	</section>
 	<section class="portfolio-service-box">
-		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
-			<div class="portfolio-service">
-				<Icon
-					class="portfolio-service"
-					icon="tabler:browser"
-					client:load
-				/>
-				<h2>Front End<br />Development</h2>
-			</div>
-			<div class="flex flex-gmd">
-				<Icon
-					class="portfolio-proficiency"
-					icon="tabler:brand-react"
-					client:load
-				/>
-				<Icon
-					class="portfolio-proficiency"
-					icon="tabler:brand-vue"
-					client:load
-				/>
-				<Icon
-					class="portfolio-proficiency"
-					icon="tabler:brand-html5"
-					client:load
-				/>
-				<Icon
-					class="portfolio-proficiency"
-					icon="tabler:brand-javascript"
-					client:load
-				/>
-			</div>
-		</div>
+		<SectionHeading>
+			<!-- <div slot="title-icon">
+				<IconTablerBrowser />
+			</div> -->
+			<SlotFragment slot="title-icon">
+				Website<br />Development
+			</SlotFragment>
+		</SectionHeading>
 		<div class="box-w23">
 			<GalleryStatic
 				dbListName="portfolio"
@@ -53,11 +38,9 @@ import Layout from "../../layouts/Layout.astro"
 	<section class="portfolio-service-box">
 		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
 			<div class="portfolio-service">
-				<Icon
-					class="portfolio-service"
-					icon="tabler:device-desktop"
-					client:load
-				/>
+				<div class="portfolio-service-icon">
+					<IconTablerDeviceDesktop />
+				</div>
 				<h2>Website<br />Design & UI</h2>
 			</div>
 			<div class="flex flex-gmd">
@@ -186,7 +169,7 @@ import Layout from "../../layouts/Layout.astro"
 				/>
 				<h2>Multimedia<br />Production</h2>
 			</div>
-			<div class="flex flex-gmd">
+			<div class="portfolio-proficiency-box">
 				<Icon
 					class="portfolio-proficiency"
 					icon="tabler:camera"
@@ -227,7 +210,6 @@ import Layout from "../../layouts/Layout.astro"
 	}
 
 	div.portfolio-service {
-		width: 216px;
 		position: relative;
 	}
 	.portfolio-service h2 {
@@ -241,7 +223,7 @@ import Layout from "../../layouts/Layout.astro"
 		margin: 0;
 	}
 
-	iconify-icon.portfolio-service {
+	.portfolio-service-icon {
 		position: absolute;
 		left: -18px;
 		bottom: 20px;
@@ -251,9 +233,16 @@ import Layout from "../../layouts/Layout.astro"
 		color: var(--clr-tan-secondary);
 	}
 
-	iconify-icon.portfolio-proficiency {
-		padding: 7px;
-		transform: scale(1.5);
+	.portfolio-proficiency-box {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.portfolio-proficiency {
+		width: 2rem;
+		height: auto;
+		padding: 0.5rem;
 
 		background-color: var(--clr-tan-tertiary);
 		border-radius: 100%;

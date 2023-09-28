@@ -1,10 +1,10 @@
 ---
-import Spacer from "../components/Spacer.astro"
+import Spacer from "../components/Spacer.svelte"
 import Button from "../components/Button.svelte"
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/base.astro"
 ---
 
-<Layout title="About Me" activePage="About Me">
+<Layout title="About Me">
 	<section id="heading">
 		<h1>About Me</h1>
 	</section>
@@ -19,7 +19,7 @@ import Layout from "../layouts/Layout.astro"
 				/>
 				<span id="photo-underline"></span>
 			</div>
-			<Spacer size="sml" />
+			<Spacer size="sm" />
 			<h4>Hail and well met!</h4>
 			<p>
 				Thanks for taking the time to check out my website. If we
@@ -48,11 +48,11 @@ import Layout from "../layouts/Layout.astro"
 				designing and developing your website, along with administering
 				various digital tools you may need to prosper in the digital
 				space.
-				<Spacer size="sml" />
-				I take my position very seriously to make sure you get better service
-				than you could find anywhere else. Ready to get started? I'd love
-				to talk.
-				<Spacer size="sml" />
+				<Spacer size="sm" />
+				 I take my position very seriously to make sure you get better
+				service than you could find anywhere else. Ready to get started?
+				I'd love to talk.
+				<Spacer size="sm" />
 			</p>
 			<Button href="/contact">Contact Me</Button>
 		</div>

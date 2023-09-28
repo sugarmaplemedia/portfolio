@@ -1,11 +1,11 @@
 ---
 import GalleryStatic from "./GalleryStatic.svelte"
-import data from "../databases/galleries.json"
+import data from "../databases/galleries.js"
 
 interface Props {
 	dbListName: keyof typeof data
-	size: "sml" | "md" | "lg"
-	tag: string
+	size?: "sml" | "md" | "lg"
+	tag?: string
 	count: number
 }
 

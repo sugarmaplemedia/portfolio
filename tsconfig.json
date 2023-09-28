@@ -1,6 +1,11 @@
 {
 	"compilerOptions": {
-		"jsx": "react"
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@stylesheets/*": ["src/stylesheets/*"]
+		}
 	},
 	"extends": "astro/tsconfigs/strict"
 }
