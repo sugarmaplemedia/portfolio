@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="box-w12">
             <h2>Reach Out Directly</h2>
             <p>
-                <Icon className="icon" icon="tabler:phone" /> <a class="txt-clrtp txth-clrts txt-wb" href="tel:9064482138">(906) 458-2138</a> <br />
+                <Icon className="icon" icon="tabler:phone" /> <a class="txt-clrtp txth-clrts txt-wb" href="tel:9063997469">(906) 399-7469</a> <br />
                 <Icon className="icon" icon="tabler:mail" /> <a class="txt-clrtp txth-clrts txt-wb" href="mailto:harrison@sm.media">harrison@sm.media</a>
             </p>
         </div>
@@ -40,6 +40,39 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 </Layout>
+
+<script>
+    const inputs = {
+        name: (<HTMLInputElement>document.getElementById("name-input")),
+        email: (<HTMLInputElement>document.getElementById("email-input")),
+        subject: (<HTMLInputElement>document.getElementById("subject-input")),
+        message: (<HTMLInputElement>document.getElementById("msg-input")),
+    };
+    const inputButton = (<HTMLButtonElement>document.getElementById("form-button"));
+
+    if (inputButton) {
+        inputButton.addEventListener("click", () => {
+            inputButton.disabled = true;
+            fetch("https://formsubmit.co/7da9631d789ff409dfcd29341a4d92aa", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: inputs.name.value,
+                    email: inputs.email.value,
+                    subject: inputs.subject.value,
+                    message: inputs.message.value
+                })
+            }).then(() => {
+                Object.values(inputs).forEach(input => {
+                    input.value = "";
+                });
+            });
+        });
+    }
+</script>
 
 <style>
     br {
@@ -114,36 +147,3 @@ import Layout from '../layouts/Layout.astro';
 		}
     }
 </style>
-
-<script>
-    const inputs = {
-        name: (<HTMLInputElement>document.getElementById("name-input")),
-        email: (<HTMLInputElement>document.getElementById("email-input")),
-        subject: (<HTMLInputElement>document.getElementById("subject-input")),
-        message: (<HTMLInputElement>document.getElementById("msg-input")),
-    };
-    const inputButton = (<HTMLButtonElement>document.getElementById("form-button"));
-
-    if (inputButton) {
-        inputButton.addEventListener("click", () => {
-            inputButton.disabled = true;
-            fetch("https://formsubmit.co/7da9631d789ff409dfcd29341a4d92aa", {
-                method: "POST",
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: inputs.name.value,
-                    email: inputs.email.value,
-                    subject: inputs.subject.value,
-                    message: inputs.message.value
-                })
-            }).then(() => {
-                Object.values(inputs).forEach(input => {
-                    input.value = "";
-                });
-            });
-        });
-    }
-</script>
