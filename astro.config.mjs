@@ -7,10 +7,5 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), robotsTxt(), sitemap()],
-  vite: {
-    ssr: {
-      external: ["svgo"]
-    }
-  },
   site: "https://harrisonbouche.com"
 });
