@@ -1,0 +1,142 @@
+---
+import { getCollection } from "astro:content"
+
+import Button from "../../components/Button"
+import Spacer from "../../components/Spacer"
+import Layout from "../../layouts/Layout.astro"
+
+export async function getStaticPaths() {
+	const portfolioEntries = await getCollection("portfolio")
+
+	return portfolioEntries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<Layout title={entry.data.name} activePage="portfolio">
+	<section id="entry-box">
+		<div id="entry-info-box" class="flex justify-center">
+			<div id="entry-image-info">
+				<img
+					src={`/images/portfolio/${entry.slug}/_icon.png   `}
+					alt={`${entry.data.name} logo`}
+				/>
+				<div id="entry-info-header">
+					<h2 id="entry-mobile-header">{entry.data.name}</h2>
+					<Button link={entry.data.source} newTab={true}>
+						View Project
+					</Button>
+				</div>
+			</div>
+			<hr id="entry-barrier" />
+		</div>
+		<div id="content-box">
+			<h2 id="entry-desktop-header">{entry.data.name}</h2>
+			<Content />
+			<Spacer />
+			<!-- {lastPage.title != "" ? <Button type="arrow left" href={lastPage.link}>{lastPage.title}</Button> : <></>}
+            {nextPage.title != "" ? <Button type="arrow right" href={nextPage.link}>{nextPage.title}</Button> : <></>} -->
+		</div>
+	</section>
+</Layout>
+
+<style is:global>
+	section {
+		width: 90%;
+		max-width: 900px;
+		margin-bottom: 48px;
+	}
+
+	h3:not(:first-of-type) {
+		padding-top: 1rem;
+	}
+
+	p img {
+		border-radius: 10px;
+		padding-bottom: 0.5rem;
+	}
+
+	#entry-box {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 30px;
+	}
+
+	#entry-info-box {
+		margin-top: 12px;
+		grid-column: 1 / 2;
+	}
+
+	#entry-info-box img {
+		width: 80%;
+		border-radius: 6px;
+		height: auto;
+	}
+
+	#entry-mobile-header {
+		display: none;
+	}
+
+	#entry-info-box hr {
+		width: 20px;
+
+		border: 0;
+		border-left: 4px dotted var(--clr-tan-secondary);
+	}
+
+	#content-box {
+		grid-column: 2 / 5;
+	}
+
+	@media only screen and (max-width: 866px) {
+		#entry-box {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		#entry-image-info {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start !important;
+			gap: 24px;
+		}
+
+		#entry-info-box img {
+			width: 80%;
+			max-width: 140px;
+			height: 100%;
+		}
+
+		#entry-info-header * {
+			margin: 0;
+		}
+
+		#entry-mobile-header {
+			display: block;
+		}
+		#entry-desktop-header {
+			display: none;
+		}
+
+		#entry-info-box hr {
+			display: none;
+		}
+	}
+
+	@media only screen and (max-width: 640px) {
+		#entry-info-box img {
+			width: 150px;
+			height: 150px;
+		}
+
+		#entry-info-header h2 {
+			font-size: 1.75rem !important;
+		}
+	}
+</style>

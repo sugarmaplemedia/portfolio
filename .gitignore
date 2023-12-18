@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # design files
 other/
+
+# Astro content collection generated files
+.astro
