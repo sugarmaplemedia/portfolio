@@ -1,11 +1,14 @@
 ---
 isDraft: false
 name: "Finlandia Foundation"
-postTitle: "Making America's largest Finnish Heritage organization's website"
-pubDate: "2022-12-31"
-tags: ["wdes", "wdev", "da"]
-image: ""
-link: "https://calendshare.app/"
+postTitle: "Making a website for America's largest Finnish Heritage organization"
+pubDate: "2023-01-18"
+description: "Finlandia Foundation National (FFN) is a non-profit organization that promotes Finnish heritage in the United States by raising funds to provide scholarships and grants, host events, and connect Finnish-Americans with their heritage."
+tags:
+    - "wdes"
+    - "wdev"
+    - "da"
+link: "https://finlandiafoundation.org/"
 ---
 
 import Gallery from "../../components/Gallery"
@@ -18,18 +21,21 @@ Kath, Director of Communications at FFN and one of my contacts for the [Top of t
 
 ## Content Transfer
 
-<Gallery pictures={[
-    {
-        "src": "/images/portfolio/ffn/contenttransfer-fullmap.png",
-        "alt": "Full map of site transfer",
-        "caption": "Full map of site transfer"
-    },
-    {
-        "src": "/images/portfolio/ffn/contenttransfer-newmap.png",
-        "alt": "Map of new site pages",
-        "caption": "Map of new site pages"
-    }
-]} client:idle />
+<Gallery
+	pictures={[
+		{
+			src: "/images/portfolio/finlandia-foundation/contenttransfer-fullmap.png",
+			alt: "Full map of site transfer",
+			caption: "Full map of site transfer",
+		},
+		{
+			src: "/images/portfolio/finlandia-foundation/contenttransfer-newmap.png",
+			alt: "Map of new site pages",
+			caption: "Map of new site pages",
+		},
+	]}
+	client:idle
+/>
 
 Despite both websites being built on top of WordPress, transferring the content was anything but simple. The old website was very text- and inline image-heavy, and was formatted with a mixture of out-of-date plugins and the original WP page builder. The new website utilized the WP Team's Gutenberg engine for page building, but Gutenberg is does not play well with dumping a bunch of text and images into its pages.
 
@@ -39,23 +45,26 @@ Using Figjam (Figma's whiteboarding solution) I mapped all the content from the 
 
 ## Website Layout
 
-<Gallery pictures={[
-    {
-        "src": "/images/portfolio/ffn/websitelayout-home.jpg",
-        "alt": "Home page",
-        "caption": "Home page"
-    },
-    {
-        "src": "/images/portfolio/ffn/websitelayout-scholarships.png",
-        "alt": "Scholarships Program page",
-        "caption": "Scholarships Program page"
-    },
-    {
-        "src": "/images/portfolio/ffn/websitelayout-news.png",
-        "alt": "E-News and Newsletter Archive page",
-        "caption": "E-News and Newsletter Archive page"
-    }
-]} client:idle />
+<Gallery
+	pictures={[
+		{
+			src: "/images/portfolio/finlandia-foundation/websitelayout-home.jpg",
+			alt: "Home page",
+			caption: "Home page",
+		},
+		{
+			src: "/images/portfolio/finlandia-foundation/websitelayout-scholarships.png",
+			alt: "Scholarships Program page",
+			caption: "Scholarships Program page",
+		},
+		{
+			src: "/images/portfolio/finlandia-foundation/websitelayout-news.png",
+			alt: "E-News and Newsletter Archive page",
+			caption: "E-News and Newsletter Archive page",
+		},
+	]}
+	client:idle
+/>
 
 The company that designed the website, a design team based in Finland, had some contractual misunderstandings with FFN, leaving the site with the content dumped on every page but with no layout. Since the design team wasn't coming back, they had me come in to finish the job.
 
@@ -63,13 +72,16 @@ This wasn't my first foray into using WordPress to generate website layouts, so 
 
 ## Google Workspace
 
-<Gallery pictures={[
-    {
-        "src": "/images/portfolio/ffn/workspace-services.png",
-        "alt": "Google workspace services list",
-        "caption": "Is all of this really necessary, Google?"
-    }
-]} client:idle />
+<Gallery
+	pictures={[
+		{
+			src: "/images/portfolio/finlandia-foundation/workspace-services.png",
+			alt: "Google workspace services list",
+			caption: "Is all of this really necessary, Google?",
+		},
+	]}
+	client:idle
+/>
 
 Besides the front-end work, Kath also enlisted me to transfer the FFN workspace infrastructure from Hostgator/CPanel to Google Workspace. They were planning to do this with the guidance the design contractors, but even after they left the project, I convinced FFN to go forward with it anyway to get away from [the mess that is Hostgator, or EIG businesses in general.](https://www.addwp.com/why-people-hate-eig-companies/)
 

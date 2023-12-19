@@ -8,9 +8,8 @@ const portfolioCollection = defineCollection({
 		postTitle: z.string().optional(),
 		pubDate: z.string().transform((str) => new Date(str)),
 		modifyDate: z.date().optional(),
-		description: z.string().optional(),
+		description: z.string(),
 		tags: z.array(z.string()),
-		image: z.string(),
 		link: z.string().url().optional(),
 	}),
 })

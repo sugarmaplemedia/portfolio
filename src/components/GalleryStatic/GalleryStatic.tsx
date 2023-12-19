@@ -26,7 +26,7 @@ type galleryItem = {
 	image: string
 }
 
-export default function GalleryStatic(props: galleryProps) {
+export default (props: galleryProps) => {
 	let galleryEntries
 	props.tag == ""
 		? (galleryEntries = [...props.database.entries])

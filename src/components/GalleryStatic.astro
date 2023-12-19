@@ -1,14 +1,21 @@
 ---
+import { getCollection } from "astro:content";
 import GalleryStatic from "./GalleryStatic/";
-import data from "../databases/galleries.json";
-const dbListName = Astro.props;
 const { size = "md" } = Astro.props;
 const { tag = "" } = Astro.props;
 const { count = 0 } = Astro.props;
 
-const  dbList = data[dbListName["dbListName"]];
-
+const portfolio = await getCollection("portfolio");
+const dbList = portfolio.map((item) => {
+    return {
+        name: item.data.name,
+        tags: item.data.tags,
+        link: `/portfolio/${item.slug}`,
+        image: `/images/portfolio/${item.slug}/${item.slug}-icon.png`,
+        source: item.data.link
+    };
+})
 
 ---
 
-<GalleryStatic database={dbList} size={size} tag={tag} count={count} />
+<GalleryStatic database={{entries: dbList}} size={size} tag={tag} count={count} />

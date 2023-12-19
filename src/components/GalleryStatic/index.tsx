@@ -1,3 +1,3 @@
-import GalleryStatic from "./GalleryStatic";
+import GalleryStatic from "./GalleryStatic"
 
-export default GalleryStatic;
+export default GalleryStatic

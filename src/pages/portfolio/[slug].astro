@@ -23,20 +23,26 @@ const { Content } = await entry.render()
 		<div id="entry-info-box" class="flex justify-center">
 			<div id="entry-image-info">
 				<img
-					src={`/images/portfolio/${entry.slug}/_icon.png   `}
+					src={`/images/portfolio/${entry.slug}/${entry.slug}-icon.png`}
 					alt={`${entry.data.name} logo`}
+                    width="512"
+                    height="512"
 				/>
 				<div id="entry-info-header">
-					<h2 id="entry-mobile-header">{entry.data.name}</h2>
-					<Button link={entry.data.source} newTab={true}>
-						View Project
-					</Button>
+					<h1 id="entry-mobile-header">{entry.data.name}</h1>
+                    {
+                        entry.data.link && (
+                            <Button link={entry.data.link} newTab={true}>
+                                View Project
+                            </Button>
+                        )
+                    }
 				</div>
 			</div>
 			<hr id="entry-barrier" />
 		</div>
 		<div id="content-box">
-			<h2 id="entry-desktop-header">{entry.data.name}</h2>
+			<h1 id="entry-desktop-header">{entry.data.name}</h1>
 			<Content />
 			<Spacer />
 			<!-- {lastPage.title != "" ? <Button type="arrow left" href={lastPage.link}>{lastPage.title}</Button> : <></>}
@@ -52,14 +58,34 @@ const { Content } = await entry.render()
 		margin-bottom: 48px;
 	}
 
-	h3:not(:first-of-type) {
+	h2 {
 		padding-top: 1rem;
 	}
+
+    ul {
+        list-style-type: disc;
+        margin-left: 1rem;
+    }
+
+    ul li {
+        line-height: 2rem;
+        margin-bottom: 0;
+    }
 
 	p img {
 		border-radius: 10px;
 		padding-bottom: 0.5rem;
 	}
+
+    a {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .breakaway-content p {
+        font-weight: bold;
+        margin-bottom: 0;
+    }
 
 	#entry-box {
 		display: grid;
@@ -73,7 +99,7 @@ const { Content } = await entry.render()
 	}
 
 	#entry-info-box img {
-		width: 80%;
+        width: 140px;
 		border-radius: 6px;
 		height: auto;
 	}
@@ -108,7 +134,7 @@ const { Content } = await entry.render()
 		}
 
 		#entry-info-box img {
-			width: 80%;
+			width: 100%;
 			max-width: 140px;
 			height: 100%;
 		}
