@@ -10,7 +10,20 @@ tags:
 link: "https://calendshare.app"
 ---
 
+import Gallery from "../../components/Gallery"
+
 ## Overview
+
+<Gallery
+	pictures={[
+		{
+			src: "/images/portfolio/calendshare/ui.png",
+			alt: "screenshot of calendshare app",
+			caption:
+				"The main view of the app, with all days and business hours displayed.",
+		},
+	]}
+/>
 
 Calendshare is a simple web application for syncing up schedules in a week when trying to find time for something. It features a guest account system (accounts are ethereal and only exist per calendar) and seamless user interface that is responsively designed. The calendar can represent all days, weekdays, or weekends, with all hours or business hours displayed. Users have the ability to add/remove availability and view how their availability syncs up with each other.
 
@@ -18,10 +31,14 @@ Calendshare is a simple web application for syncing up schedules in a week when 
 
 I set out to learn more about SAML/SSO authentication, WebSockets, Firebase (Google's BaaS, Backend as a Service), and Svelte (JS-based reactive component framework)/SvelteKit (its meta-framework for building full-stack apps). Initially, I had more lofty plans for the feature set of the app (persistent accounts and sessions, Google Calendar integration, personal calendars), but gradually scaled back as development time began to run out.
 
-Outcomes
+## Outcomes
+
 Before I began the project, I had never used a BaaS, instead opting for individual backend tools (auth, database, real-time communication, etc). With this project learned quite a bit about Firebase and its surprisingly delightful plug-and-play authentication and database solutions.
+
 I have had experience with Svelte, opting to build most of my clients' sites with it as my choice of component framework. However, I had never dived into its companion tool SvelteKit beyond a simple static website and wanted to give it a go. Unfortunately, I did not do enough research on the requirements of my project and ended up shooting myself in the foot in terms of features and complexity. Throughout the project, I struggled to conceptualize how SvelteKit separates client and server code (note: very ambiguously) and often mixed client/server code, leading to confusion as to why certain things worked and didn't.
+
 Notably, this caused me to come up short on quite a few of my goals. I never was able to implement proper auth due to the trickiness of SvelteKit's SSR implementation, let alone get into SAML/SSO. (I did end up learning about the difference between federated authentication and SAML/SSO, so I wouldn't have integrated SSO per the specs of my initial proposal.) And, because the auth situation broke me, I never was able to integrate Google Calendar and personal schedules. SvelteKit's structure also got in the way of implementing WebSockets, and I spent so much time trying to get auth to work that I never even got to that.
+
 I also didn't end up building custom days/hours into the application, but this was a deadline problem rather than a complexity problem.
 
 ## Conclusion
