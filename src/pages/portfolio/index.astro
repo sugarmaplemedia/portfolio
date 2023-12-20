@@ -21,7 +21,13 @@ const portfolioEntries = await getCollection('portfolio', ({ data }) => {
     <section class="grid gap-6">
         {portfolioEntries.map((entry) => (
             <a class="bg-tertiary p-6 pb-6 rounded-xl hover:drop-shadow-input-focused hover:scale-[1.02] block" href={`/portfolio/${entry.slug}`} aria-label={entry.data.postTitle}>
-                <div class="grid grid-cols-5 gap-8">
+                <div class="grid grid-cols-5 gap-6">
+                    {entry.data.isClientWork && (
+                        <div class="col-span-5 flex gap-2 items-center">
+                            <Icon icon="tabler:star-filled" className="p-2 bg-secondary rounded-full" />
+                            <p class="uppercase font-black mb-0">Client Work</p>
+                        </div>
+                    )}
                     <div>
                         <img
                             src={`/images/portfolio/${entry.slug}/${entry.slug}-icon.png`}
