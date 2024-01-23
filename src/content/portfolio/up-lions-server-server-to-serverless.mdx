@@ -1,0 +1,46 @@
+---
+isDraft: false
+isClientWork: true
+hasNoImage: true
+name: "U.P. Lions Serve Upgrades"
+postTitle: "From Server to Serverless: U.P. Lions Serve Upgrades"
+pubDate: "2023-02-21"
+description: "I left the U.P. Lions Serve website on a DigitalOcean container, and over time, website changes became headache inducing and unruly. Luckily, I learned a few things during that time. Here's how I fixed it."
+tags:
+    - "wdev"
+    - "da"
+    - "dm"
+---
+
+## Where we left off
+
+In [my last post about U.P. Lions Serve](./up-lions-serve) detailing the start of my journey with them, I finished with a note about moving the website from Firebase to DigitalOcean due to hitting our bandwidth cap for the free tier. Since then, I have learned...
+
+-   Git
+-   Several Javascript frameworks
+-   Several cloud hosting providers
+-   Proper modern website architecture
+
+...and the old ways aren't cutting it anymore. In this entry, I'll be detailing my experience moving the U.P. Lions Serve website to a Git repository, rebuilding it in Astro, and deploying it to Vercel.
+
+## Getting up to snuff
+
+In the fall semester of 2022, over a year after becoming the "webmaster," I decided to finally dive into web development past static sites and JQuery (a stack I had picked up from my predecessor). I dove into the [excellent tutorials on FreeCodeCamp](https://freecodecamp.org) and, within two weeks, had completed up to the [Front End Library certification](https://www.freecodecamp.org/learn/front-end-development-libraries/). At the same time, I was polishing my knowledge with the (also fantastic) free courses on [Helsinki University's FullStackOpen](https://fullstackopen.com/en/) and taking a class at my university on client-side programming.
+
+Sometime within that period, I discovered the [/r/webdev](https://reddit.com/r/webdev) subreddit and witnessed other web developers in action, new and old. I also started following Fireship on YouTube, which is where I first heard about Astro. I was immediately intrigued by the idea of a framework that could take any major component library compile to static HTML, CSS, and JS. With this knowledge, I felt the time was right to start rebuilding the U.P. Lions Serve website.
+
+## The rebuild: why and how
+
+By this point, the U.P. Lions Serve website had become beyond bloated (the Defense Against Diabetes CSS file was over 4 megabytes!) and was a pain to update. Any time my clients requested an update, I would have to manually edit the HTML, CSS, and JS files and then FTP into the server, _manually_ backup the old files, and then overwrite them.
+
+With the power of Git, Astro and better cloud hosting options on my side, I began the rebuild. I started by creating a new repository on GitHub and cloning it to my local machine. I then created a new Astro project and copied over the HTML, CSS, and JS files from the old website. After converting the old website pages to Astro components and component-izing some of the more obvious parts, I needed to deploy it somewhere.
+
+## Vercel, my new best friend
+
+If you traveled back in time and told me all I had to do to update website files was make a change, click a button, and they would be live with a completely traceable history in an environment I wouldn't have to care about in seconds, I would have laughed in your face. But if you aren't familiar, that's exactly what Vercel (and Netlify, and Cloudflare Pages, etc etc) does.
+
+I was able to connect my GitHub repository to Vercel and, with a few clicks, deploy my website to a live environment. I was also able to set up my custom domain and SSL certificate with a few more clicks. All within a generous free plan that hasn't cost my clients a dime since we went live.
+
+## The Future
+
+This was just the jumping off point. After the website was live, I started several other subcontracts to build [(and rebuild)](./childhood-cancer-rewrite) program websites for the U.P. Lions. My newest venture has been the development of the UPLS CMS, a custom CMS built on top of PayloadCMS that will allow the U.P. Lions to manage their own content without having to go through me. I'll be detailing that in a future post.
