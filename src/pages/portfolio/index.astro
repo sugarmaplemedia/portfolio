@@ -11,9 +11,7 @@ const portfolioEntries = (
 	await getCollection("portfolio", ({ data }) => {
 		return import.meta.env.DEV ? true : !data.isDraft
 	})
-).toSorted((entryA, entryB) =>
-	entryA.data.pubDate > entryB.data.pubDate ? -1 : 1,
-)
+).sort((entryA, entryB) => (entryA.data.pubDate > entryB.data.pubDate ? -1 : 1))
 ---
 
 <Layout title="Portfolio | Harrison Bouche" activePage="Portfolio">
