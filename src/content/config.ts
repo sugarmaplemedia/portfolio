@@ -5,6 +5,7 @@ const portfolioCollection = defineCollection({
 	schema: z.object({
 		isDraft: z.boolean(),
 		isClientWork: z.boolean().optional(),
+		hasNoImage: z.boolean().optional(),
 		name: z.string(),
 		postTitle: z.string().optional(),
 		pubDate: z.string().transform((str) => new Date(str)),

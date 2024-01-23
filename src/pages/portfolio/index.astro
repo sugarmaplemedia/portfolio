@@ -1,16 +1,19 @@
 ---
-import { Icon } from '@iconify-icon/react';
-import GalleryStatic from '../../components/GalleryStatic.astro';
-import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { Icon } from "@iconify-icon/react"
+import GalleryStatic from "../../components/GalleryStatic.astro"
+import Layout from "../../layouts/Layout.astro"
+import { getCollection } from "astro:content"
 
 import serviceList from "../../components/GalleryStatic/services.json"
 
 // Filter all draft entries out of the portfolio collection when in production
-const portfolioEntries = await getCollection('portfolio', ({ data }) => {
-    return import.meta.env.DEV ? true : !data.isDraft
-})
-
+const portfolioEntries = (
+	await getCollection("portfolio", ({ data }) => {
+		return import.meta.env.DEV ? true : !data.isDraft
+	})
+).toSorted((entryA, entryB) =>
+	entryA.data.pubDate > entryB.data.pubDate ? -1 : 1,
+)
 ---
 
 <Layout title="Portfolio | Harrison Bouche" activePage="Portfolio">
@@ -18,50 +21,95 @@ const portfolioEntries = await getCollection('portfolio', ({ data }) => {
 		<h1>Portfolio</h1>
 	</section>
 
-    <section class="grid gap-6">
-        {portfolioEntries.map((entry) => (
-            <a class="bg-tertiary p-6 pb-6 rounded-xl hover:drop-shadow-input-focused hover:scale-[1.02] block" href={`/portfolio/${entry.slug}`} aria-label={entry.data.postTitle}>
-                <div class="grid grid-cols-5 gap-6">
-                    {entry.data.isClientWork && (
-                        <div class="col-span-5 flex gap-2 items-center">
-                            <Icon icon="tabler:star-filled" className="p-2 bg-secondary rounded-full" />
-                            <p class="uppercase font-black mb-0">Client Work</p>
-                        </div>
-                    )}
-                    <div>
-                        <img
-                            src={`/images/portfolio/${entry.slug}/${entry.slug}-icon.png`}
-                            alt={`${entry.data.name} logo`}
-                            width="512"
-                            height="512"
-                            class="rounded-xl w-40"
-                        />
-                        <div class="flex flex-wrap mt-4 gap-2">
-                            {entry.data.tags.map((service) => (
-                                <Icon
-                                    className="portfolio-proficiency"
-                                    title={
-                                        serviceList[
-                                            service as keyof typeof serviceList
-                                        ].title
-                                    }
-                                    icon={
-                                        serviceList[
-                                            service as keyof typeof serviceList
-                                        ].icon
-                                    }
-                                />
-                            ))}
-                        </div>
-                    </div>
-                    <div class="col-span-4">
-                        <h3 class="mt-0">{entry.data.postTitle}</h3>
-                        <p>{entry.data.description} <span class="italics underline">Learn more.</span></p>
-                    </div>
-                </div>
-            </a>
-        ))}
-    </section>
+	<section class="grid gap-6">
+		<!-- Entries -->
+		{
+			portfolioEntries.map((entry) => (
+				<a
+					class="portfolio-entry block rounded-xl bg-tertiary p-6 pb-6 hover:scale-[1.02] hover:drop-shadow-input-focused"
+					href={`/portfolio/${entry.slug}`}
+					aria-label={entry.data.postTitle}
+				>
+					<div class="grid grid-cols-5 gap-6">
+						{entry.data.isClientWork && (
+							<div class="col-span-5 flex items-center gap-2">
+								<Icon
+									icon="tabler:star-filled"
+									className="p-2 bg-secondary rounded-full"
+								/>
+								<p class="mb-0 font-black uppercase">
+									Client Work
+								</p>
+							</div>
+						)}
+						{!entry.data.hasNoImage && (
+							<div>
+								<img
+									src={`/images/portfolio/${entry.slug}/${entry.slug}-icon.png`}
+									alt={`${entry.data.name} logo`}
+									width="512"
+									height="512"
+									class="w-40 rounded-xl"
+								/>
+								<div class="mt-4 flex flex-wrap gap-2">
+									{entry.data.tags.map((service) => (
+										<Icon
+											className="portfolio-proficiency"
+											title={
+												serviceList[
+													service as keyof typeof serviceList
+												].title
+											}
+											icon={
+												serviceList[
+													service as keyof typeof serviceList
+												].icon
+											}
+										/>
+									))}
+								</div>
+							</div>
+						)}
+
+						<div
+							class={
+								!entry.data.hasNoImage
+									? "col-span-4"
+									: "col-span-5"
+							}
+						>
+							<h3 class="mt-0">{entry.data.postTitle}</h3>
+							<p>
+								{entry.data.description}{" "}
+								<span class="italics underline">
+									Learn more.
+								</span>
+							</p>
+						</div>
+						{entry.data.hasNoImage && (
+							<div class="flex flex-wrap gap-2">
+								{entry.data.tags.map((service) => (
+									<Icon
+										className="portfolio-proficiency"
+										title={
+											serviceList[
+												service as keyof typeof serviceList
+											].title
+										}
+										icon={
+											serviceList[
+												service as keyof typeof serviceList
+											].icon
+										}
+									/>
+								))}
+							</div>
+						)}
+					</div>
+				</a>
+			))
+		}
+	</section>
 
 	<!-- <section class="portfolio-service-box">
 		<div class="box-w13 flex flex-dc flex-jc flex-ac flex-gmd">
@@ -162,7 +210,7 @@ const portfolioEntries = await getCollection('portfolio', ({ data }) => {
 	}
 	.portfolio-service h2 {
 		margin-bottom: 0;
-		
+
 		font-size: 1.75rem;
 		line-height: 1.75rem;
 		text-transform: uppercase;

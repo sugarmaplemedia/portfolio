@@ -20,28 +20,31 @@ const { Content } = await entry.render()
 
 <Layout title={entry.data.name} activePage="Portfolio">
 	<section id="entry-box">
-		<div id="entry-info-box" class="flex justify-center">
-			<div id="entry-image-info">
-				<img
-					src={`/images/portfolio/${entry.slug}/${entry.slug}-icon.png`}
-					alt={`${entry.data.name} logo`}
-                    width="512"
-                    height="512"
-				/>
-				<div id="entry-info-header">
-					<h1 id="entry-mobile-header">{entry.data.name}</h1>
-                    {
-                        entry.data.link && (
-                            <Button link={entry.data.link} newTab={true}>
-                                View Project
-                            </Button>
-                        )
-                    }
+		{
+			!entry.data.hasNoImage && (
+				<div id="entry-info-box" class="flex justify-center">
+					<div id="entry-image-info">
+						<img
+							src={`/images/portfolio/${entry.slug}/${entry.slug}-icon.png`}
+							alt={`${entry.data.name} logo`}
+							width="512"
+							height="512"
+						/>
+						<div id="entry-info-header">
+							<h1 id="entry-mobile-header">{entry.data.name}</h1>
+							{entry.data.link && (
+								<Button link={entry.data.link} newTab={true}>
+									View Project
+								</Button>
+							)}
+						</div>
+					</div>
+					<hr id="entry-barrier" />
 				</div>
-			</div>
-			<hr id="entry-barrier" />
-		</div>
-		<div id="content-box">
+			)
+		}
+
+		<div class={!entry.data.hasNoImage ? "col-span-3" : "col-span-4"}>
 			<h1 id="entry-desktop-header">{entry.data.name}</h1>
 			<Content />
 			<Spacer />
@@ -62,30 +65,30 @@ const { Content } = await entry.render()
 		padding-top: 1rem;
 	}
 
-    ul {
-        list-style-type: disc;
-        margin-left: 1rem;
-    }
+	ul {
+		list-style-type: disc;
+		margin-left: 1rem;
+	}
 
-    ul li {
-        line-height: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
+	ul li {
+		line-height: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
 
 	p img {
 		border-radius: 10px;
 		padding-bottom: 0.5rem;
 	}
 
-    a {
-        font-weight: bold;
-        text-decoration: underline;
-    }
+	a {
+		font-weight: bold;
+		text-decoration: underline;
+	}
 
-    .breakaway-content p {
-        font-weight: bold;
-        margin-bottom: 0;
-    }
+	.breakaway-content p {
+		font-weight: bold;
+		margin-bottom: 0;
+	}
 
 	#entry-box {
 		display: grid;
@@ -99,7 +102,7 @@ const { Content } = await entry.render()
 	}
 
 	#entry-info-box img {
-        width: 140px;
+		width: 140px;
 		border-radius: 6px;
 		height: auto;
 	}
@@ -113,10 +116,6 @@ const { Content } = await entry.render()
 
 		border: 0;
 		border-left: 4px dotted var(--clr-tan-secondary);
-	}
-
-	#content-box {
-		grid-column: 2 / 5;
 	}
 
 	@media only screen and (max-width: 866px) {
